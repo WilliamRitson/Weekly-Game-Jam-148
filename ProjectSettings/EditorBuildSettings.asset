@@ -4,5 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/WillsTestScene.unity
+    guid: 0a91278af07f0fc4eb45095c0a0e1919
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 473bc9683a232b345bc44303b606b23d,
+      type: 2}

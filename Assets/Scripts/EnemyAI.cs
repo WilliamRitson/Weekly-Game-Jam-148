@@ -7,6 +7,12 @@ public class EnemyAI : Controller
 {
     GameObject player;
     private float maxEngagmentDist = 8;
+    private float squaredMaxEngagmentDist;
+
+    private void Awake()
+    {
+        squaredMaxEngagmentDist = maxEngagmentDist * maxEngagmentDist;
+    }
 
     void Update()
     {
@@ -16,9 +22,11 @@ public class EnemyAI : Controller
             if (!player) return;
         }
         Vector3 playerPos = player.transform.position;
-        if ((transform.position - playerPos).sqrMagnitude > (maxEngagmentDist * maxEngagmentDist))
+        if ((transform.position - playerPos).sqrMagnitude > squaredMaxEngagmentDist)
+        {
+            movementDirection = Vector3.zero;
             return;
-
+        }
 
         movementDirection = playerPos - transform.position;
         TriggerProjectileAttack(playerPos);
