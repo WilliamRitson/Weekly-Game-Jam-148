@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8282411493121547717}
   - component: {fileID: 7993249566926608189}
   - component: {fileID: 6427696827174015556}
-  - component: {fileID: 4628070239329510858}
+  - component: {fileID: 1025260687}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -153,6 +153,8 @@ MonoBehaviour:
   timeBetweenShots: 0.7
   projectile: {fileID: 7470936336945256541, guid: 0bb46214f83ad7b4e85bc07ea244952e,
     type: 3}
+  damage: 1
+  damageType: 0
 --- !u!58 &7993249566926608189
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -185,7 +187,7 @@ MonoBehaviour:
   currentLife: 5
   weakness: 0
   resistance: 2
---- !u!114 &4628070239329510858
+--- !u!114 &1025260687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,6 +196,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3126844044251436796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fbc87108a8e7584693329d618d57493, type: 3}
+  m_Script: {fileID: 11500000, guid: f5dc8ced77a7b9241af275cc7627e9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secBeforLoadingStartScene: 3
+  startSceneBuildIndex: 0

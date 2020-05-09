@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 3126844044251436792}
   - component: {fileID: 3126844044251436793}
   - component: {fileID: 3126844044251436795}
-  - component: {fileID: 8282411493121547717}
   - component: {fileID: 7993249566926608189}
+  - component: {fileID: 8282411493121547717}
   - component: {fileID: 6427696827174015556}
   - component: {fileID: 4628070239329510858}
   - component: {fileID: 5205183146902971212}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Entity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,9 +78,9 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 25c5e49a851704c4db40384accae0c2f, type: 3}
-  m_Color: {r: 0.745283, g: 0.10898005, b: 0.10898005, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
@@ -96,7 +96,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3126844044251436796}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -121,23 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9913c7ba19c181e4ca8e178245ce5c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
---- !u!114 &8282411493121547717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3126844044251436796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f701a1ec54942d43bd2af46e380b414, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileVelocity: 6
-  timeBetweenShots: 0.7
-  projectile: {fileID: 7470936336945256541, guid: 0bb46214f83ad7b4e85bc07ea244952e,
-    type: 3}
+  initialSpeed: 2
+  maxMomentum: 1.9
+  timeToInreaseSpeed: 0.3
 --- !u!58 &7993249566926608189
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -154,6 +140,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16666667
+--- !u!114 &8282411493121547717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126844044251436796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f701a1ec54942d43bd2af46e380b414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileVelocity: 6
+  timeBetweenShots: 1.1
+  projectile: {fileID: 7470936336945256541, guid: 0bb46214f83ad7b4e85bc07ea244952e,
+    type: 3}
+  damage: 1
+  damageType: 0
 --- !u!114 &6427696827174015556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +173,7 @@ MonoBehaviour:
   maximumLife: 5
   currentLife: 5
   weakness: 0
-  resistance: 2
+  resistance: 0
 --- !u!114 &4628070239329510858
 MonoBehaviour:
   m_ObjectHideFlags: 0

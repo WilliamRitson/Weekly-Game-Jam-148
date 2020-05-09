@@ -7,6 +7,12 @@ public class Shapeshifter : Controllable
 {
     private float cooldown = 10f;
     private bool onCoolDown = false;
+
+    private void Start()
+    {
+        gameObject.tag = "Player";
+    }
+
     private void Shapeshift(Vector2 target)
     {
         var shiftable = Physics2D.OverlapCircleAll(target, 1)
@@ -16,8 +22,8 @@ public class Shapeshifter : Controllable
         GameObject newForm = Instantiate(shiftable.gameObject, transform.position, transform.rotation);
         Destroy(newForm.GetComponent<EnemyAI>());
         newForm.AddComponent<Shapeshifter>();
+        newForm.AddComponent<CameraCenter>();
         newForm.AddComponent<PlayerController>();
-        newForm.tag = "Player";
         Destroy(gameObject);
     }
 

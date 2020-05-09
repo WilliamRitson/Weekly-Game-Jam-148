@@ -22,6 +22,7 @@ public class Mover : Controllable
 
     private void Update()
     {
+        if (controller == null) return;
         deltaTimeCounter += Time.deltaTime;
 
         if (controller.movementDirection == Vector2.zero)
@@ -34,14 +35,12 @@ public class Mover : Controllable
             deltaTimeCounter = 0;
             momentum += .1f;
         }
-        print(momentum + " momentum");
-        print(rig.velocity);
     }
 
     private void FixedUpdate()
     {
-        if (controller == null) return;
-        rig.velocity = controller.movementDirection.normalized * initialSpeed * momentum;
+        Vector2 moveDir = controller != null ? controller.movementDirection.normalized : Vector2.zero;
+        rig.velocity = moveDir * initialSpeed;
     }
 
     protected override void AddController(Controller controller)

@@ -1,0 +1,26 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class StartCanves : MonoBehaviour
+{
+    public void Play(int gameSceneIndex)
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        SceneManager.LoadScene(gameSceneIndex);
+    }
+
+    public void UpdateAudioState()
+    {
+        AudioManager.Instance.UpdateAudioState();
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+}
