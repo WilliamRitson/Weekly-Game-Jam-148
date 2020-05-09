@@ -10,7 +10,9 @@ public abstract class Controller : MonoBehaviour
 
     /// <summary> The direction the controlled entities wants to move </summary>
     public Vector2 movementDirection;
-    
+
+    public event Action<Vector2> OnLaunchProjectile;
+
     protected void TriggerAttack()
     {
         OnAttack?.Invoke();
