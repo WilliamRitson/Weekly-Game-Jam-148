@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ProjectileTracer : MonoBehaviour
 {
+
     [HideInInspector] public Transform target;
+
+    [SerializeField] private float secToDestroy;//seconds to destroy the projectile if it did not hit anything
+
     private float x, y, angle;
     private Rigidbody2D rig;
     private Projectile2D Projectile2D;
@@ -17,6 +21,8 @@ public class ProjectileTracer : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         rig.velocity = Vector2.zero;
+
+        Destroy(gameObject, secToDestroy);//destroy the projectile if it did not hit anything
     }
 
     // Update is called once per frame

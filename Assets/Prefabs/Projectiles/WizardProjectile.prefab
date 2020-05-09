@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1117ebabb2a0db04bb2a617c6ec26acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileVelocity: 0
   damage: 1
   damageType: 0
 --- !u!58 &7933732613927211527
@@ -162,3 +163,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  secToDestroy: 1
