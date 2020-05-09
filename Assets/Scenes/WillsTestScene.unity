@@ -128,6 +128,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3946245865485708338, guid: 84b8db11e4f92394787d76e7196dd0bb,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7470936336945256541, guid: 0bb46214f83ad7b4e85bc07ea244952e,
+        type: 3}
+    - target: {fileID: 3946245865485708338, guid: 84b8db11e4f92394787d76e7196dd0bb,
+        type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8022636059321526027, guid: 84b8db11e4f92394787d76e7196dd0bb,
         type: 3}
       propertyPath: m_Name
@@ -211,6 +222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire Elemental
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375120349427230601, guid: 43b05def8e20096408e7f1922908e2a4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8375120349427230607, guid: 43b05def8e20096408e7f1922908e2a4,
         type: 3}
@@ -753,12 +769,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1832557662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36c0e25d68c60244a83f3967864cc0d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 21fb203d6ea33054a910b8e54052ab7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 10
-  numberOfProjectiles: 8
-  delayBetweenShots: 0.1
+  numberOfProjectiles: 6
+  maxDisplacment: 11
+  sizeRangeLow: 0
+  sizeRangeHigh: 0.8
+  delayBetweenShots: 0.2
 --- !u!1001 &2082761567
 PrefabInstance:
   m_ObjectHideFlags: 0

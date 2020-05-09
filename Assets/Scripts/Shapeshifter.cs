@@ -19,7 +19,12 @@ public class Shapeshifter : Controllable
             .FirstOrDefault(col => col.GetComponent<EnemyAI>() != null);
         if (!shiftable) return;
 
-        GameObject newForm = Instantiate(shiftable.gameObject, transform.position, transform.rotation);
+        Transform(shiftable.gameObject);
+    }
+
+    private void Transform(GameObject toCopy)
+    {
+        GameObject newForm = Instantiate(toCopy, transform.position, transform.rotation);
         Destroy(newForm.GetComponent<EnemyAI>());
         newForm.AddComponent<Shapeshifter>();
         newForm.AddComponent<CameraCenter>();

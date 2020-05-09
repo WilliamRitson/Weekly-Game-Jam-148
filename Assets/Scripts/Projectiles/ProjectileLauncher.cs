@@ -32,7 +32,7 @@ public class ProjectileLauncher : Controllable
         LaunchInDirection(target - (Vector2)transform.position);
     }
 
-    public void LaunchInDirection(Vector2 dir)
+    public void LaunchInDirection(Vector2 dir, float sizeMultilpier = 1, float lifetimeModifier = -1)
     {
         GameObject shot = Instantiate(projectile, transform.position, transform.rotation);
         if (launcherCollider)
@@ -40,6 +40,14 @@ public class ProjectileLauncher : Controllable
             Physics2D.IgnoreCollision(launcherCollider, shot.GetComponent<Collider2D>());
         }
         shot.GetComponent<Rigidbody2D>().velocity = dir.normalized * projectileVelocity;
+        if (sizeMultilpier != 1)
+        {
+            shot.transform.localScale *= sizeMultilpier;
+        }
+        if (lifetimeModifier != -1)
+        {
+            shot.GetComponent<Temporary>().lifespan = lifetimeModifier;
+        }
         Projectile2D proj = shot.GetComponent<Projectile2D>();
 
         if (gameObject.CompareTag("Player"))
