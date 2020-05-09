@@ -17,4 +17,9 @@ public abstract class Controller : MonoBehaviour
     {
         OnAttack?.Invoke();
     }
+
+    protected void TriggerProjectileAttack(Vector2 target)
+    {
+        OnLaunchProjectile?.Invoke(target);
+    }
 }
