@@ -211,25 +211,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2090001040113050547, guid: 84b8db11e4f92394787d76e7196dd0bb,
-        type: 3}
-      propertyPath: maximumLife
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2090001040113050547, guid: 84b8db11e4f92394787d76e7196dd0bb,
-        type: 3}
-      propertyPath: currentLife
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 8022636059321526027, guid: 84b8db11e4f92394787d76e7196dd0bb,
         type: 3}
       propertyPath: m_Name
       value: Player (Shapeshifter)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8022636059321526027, guid: 84b8db11e4f92394787d76e7196dd0bb,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8022636059321526029, guid: 84b8db11e4f92394787d76e7196dd0bb,
         type: 3}
@@ -588,12 +573,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wizard Earth Elemental
       objectReference: {fileID: 0}
-    - target: {fileID: 7677971720346345527, guid: 9d67d58473ee370449dac7ca3155387e,
-        type: 3}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 7470936336945256541, guid: 1a95904930f3e0b46a162cbbe0115bdc,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d67d58473ee370449dac7ca3155387e, type: 3}
 --- !u!1001 &866787154557111603

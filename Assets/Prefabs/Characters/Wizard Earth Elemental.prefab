@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.37
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
@@ -110,7 +110,12 @@ PrefabInstance:
     - target: {fileID: 3126844044251436796, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_Name
-      value: Earth Elemental
+      value: Wizard Earth Elemental
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436796, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
@@ -142,5 +147,11 @@ PrefabInstance:
       propertyPath: damageType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8282411493121547717, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7470936336945256541, guid: 1a95904930f3e0b46a162cbbe0115bdc,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ef9abe98f4196438b3b673eb717bf4, type: 3}

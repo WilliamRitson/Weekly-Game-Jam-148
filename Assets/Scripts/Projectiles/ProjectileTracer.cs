@@ -6,21 +6,25 @@ public class ProjectileTracer : MonoBehaviour
 {
 
     [HideInInspector] public Transform target;
-
+    
+    [SerializeField] private Projectile2D Projectile2D;
     [SerializeField] private float secToDestroy;//seconds to destroy the projectile if it did not hit anything
 
     private float x, y, angle;
     private Rigidbody2D rig;
-    private Projectile2D Projectile2D;
-
+    private Transform playerTransform;
 
     // Start is called before the first frame update
     void Start()
     {
-        Projectile2D = GetComponent<Projectile2D>();
-        rig = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-        rig.velocity = Vector2.zero;
+        rig = Projectile2D.GetComponent<Rigidbody2D>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
+        if (Projectile2D.isTargetingPlayer)
+        {
+            target = playerTransform;
+            rig.velocity = Vector2.zero;
+        }
 
         Destroy(gameObject, secToDestroy);//destroy the projectile if it did not hit anything
     }
@@ -30,19 +34,39 @@ public class ProjectileTracer : MonoBehaviour
     {
         if (target != null)
         {
-            x = transform.position.x;
-            y = transform.position.y;
+            if (rig.velocity != Vector2.zero)
+            {
+                rig.velocity = Vector2.zero;
+            }
+
+            x = Projectile2D.transform.position.x;
+            y = Projectile2D.transform.position.y;
 
             x = x - target.position.x;
             y = y - target.position.y;
             angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-            transform.Rotate(new Vector3(0, 0, 180));
-            transform.position += transform.right * Projectile2D.projectileVelocity * Time.deltaTime ;
+            Projectile2D.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            Projectile2D.transform.Rotate(new Vector3(0, 0, 180));
+            Projectile2D.transform.position += Projectile2D.transform.right * Projectile2D.projectileVelocity * Time.deltaTime;
         }
-        else
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (target == null)
         {
-            Destroy(gameObject);
+            if (!Projectile2D.isTargetingPlayer && collision.tag == "Enemy")
+            {
+                target = collision.transform;
+            }
+            //if (Projectile2D.isTargetingPlayer && collision.tag == "Player")
+            //{
+            //    target = playerTransform;
+            //}
         }
     }
 }

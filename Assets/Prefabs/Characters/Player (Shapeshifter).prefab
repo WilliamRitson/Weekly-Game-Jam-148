@@ -139,6 +139,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (Shapeshifter)
       objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436796, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: maximumLife
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: currentLife
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282411493121547717, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7470936336945256541, guid: 1a95904930f3e0b46a162cbbe0115bdc,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 5205183146902971212, guid: d8ef9abe98f4196438b3b673eb717bf4, type: 3}
     - {fileID: 4628070239329510858, guid: d8ef9abe98f4196438b3b673eb717bf4, type: 3}

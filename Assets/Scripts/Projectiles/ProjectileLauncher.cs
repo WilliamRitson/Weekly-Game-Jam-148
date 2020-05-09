@@ -36,6 +36,16 @@ public class ProjectileLauncher : Controllable
         }
         shot.GetComponent<Rigidbody2D>().velocity = (target - (Vector2)transform.position).normalized * projectileVelocity;
         Projectile2D proj = shot.GetComponent<Projectile2D>();
+
+        if (gameObject.CompareTag("Player"))
+        {
+            proj.isTargetingPlayer = false;
+        }
+        else
+        {
+            proj.isTargetingPlayer = true;
+        }
+
         proj.projectileVelocity = projectileVelocity;
         proj.damage = damage;
         proj.damageType = damageType;

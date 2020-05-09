@@ -3,6 +3,7 @@
 [RequireComponent(typeof(Collider2D))]
 public class Projectile2D : MonoBehaviour
 {
+    public bool isTargetingPlayer;
     public float projectileVelocity;
     public int damage = 1;
     public Element damageType;
