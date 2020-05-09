@@ -13,6 +13,17 @@ public abstract class Controller : MonoBehaviour
 
     public event Action<Vector2> OnLaunchProjectile;
 
+    public event Action<Vector2> OnShapeshift;
+
+    private void Start()
+    {
+        foreach (Controllable controllable in GetComponents<Controllable>())
+        {
+            Debug.Log("set controller of " + controllable + " to " + this);
+            controllable.SetController(this);
+        }
+    }
+
     protected void TriggerAttack()
     {
         OnAttack?.Invoke();
@@ -22,4 +33,10 @@ public abstract class Controller : MonoBehaviour
     {
         OnLaunchProjectile?.Invoke(target);
     }
+
+    protected void TriggerShapeshift(Vector2 target)
+    {
+        OnShapeshift?.Invoke(target);
+    }
+    
 }

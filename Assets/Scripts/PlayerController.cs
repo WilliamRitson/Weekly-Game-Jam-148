@@ -12,6 +12,7 @@ public class PlayerController : Controller
     {
         controls = new PlayerControls();
         controls.Gameplay.Attack.performed += (ctx) => Attack();
+        controls.Gameplay.Shapeshift.performed += (ctx) => Shapeshift();
         playerCamera = Camera.main;
     }
 
@@ -20,6 +21,13 @@ public class PlayerController : Controller
         Vector2 mousePos = Mouse.current.position.ReadValue();
         mousePos = playerCamera.ScreenToWorldPoint(mousePos);
         TriggerProjectileAttack(mousePos);
+    }
+
+    private void Shapeshift()
+    {
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        mousePos = playerCamera.ScreenToWorldPoint(mousePos);
+        TriggerShapeshift(mousePos);
     }
 
     void Update()
