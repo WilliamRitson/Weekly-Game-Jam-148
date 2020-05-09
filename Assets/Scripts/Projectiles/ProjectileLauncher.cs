@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-
-[RequireComponent(typeof(Controller))]
 public class ProjectileLauncher : Controllable
 {
     public float projectileVelocity = 6f;
@@ -15,26 +13,33 @@ public class ProjectileLauncher : Controllable
 
     private void Awake()
     {
-        controller = GetComponent<Controller>();
         launcherCollider = GetComponent<Collider2D>();
-        controller.OnLaunchProjectile += LaunchAtPosition;
     }
-
 
     void Update()
     {
         timeSinceLastShot += Time.deltaTime;
     }
 
-    void LaunchAtPosition(Vector2 target)
+    void LaunchIfAvalible(Vector2 target)
     {
         if (timeSinceLastShot <= timeBetweenShots) return;
+        LaunchAtPosition(target);
+    }
+
+    public void LaunchAtPosition(Vector2 target)
+    {
+        LaunchInDirection(target - (Vector2)transform.position);
+    }
+
+    public void LaunchInDirection(Vector2 dir)
+    {
         GameObject shot = Instantiate(projectile, transform.position, transform.rotation);
         if (launcherCollider)
         {
             Physics2D.IgnoreCollision(launcherCollider, shot.GetComponent<Collider2D>());
         }
-        shot.GetComponent<Rigidbody2D>().velocity = (target - (Vector2)transform.position).normalized * projectileVelocity;
+        shot.GetComponent<Rigidbody2D>().velocity = dir.normalized * projectileVelocity;
         Projectile2D proj = shot.GetComponent<Projectile2D>();
         proj.damage = damage;
         proj.damageType = damageType;
@@ -43,11 +48,11 @@ public class ProjectileLauncher : Controllable
 
     protected override void AddController(Controller controller)
     {
-        controller.OnLaunchProjectile += LaunchAtPosition;
+        controller.OnLaunchProjectile += LaunchIfAvalible;
     }
 
     protected override void RemoveController(Controller controller)
     {
-        controller.OnLaunchProjectile -= LaunchAtPosition;
+        controller.OnLaunchProjectile -= LaunchIfAvalible;
     }
 }

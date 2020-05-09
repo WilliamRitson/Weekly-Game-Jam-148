@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : Controller
@@ -13,6 +11,7 @@ public class PlayerController : Controller
         controls = new PlayerControls();
         controls.Gameplay.Attack.performed += (ctx) => Attack();
         controls.Gameplay.Shapeshift.performed += (ctx) => Shapeshift();
+        controls.Gameplay.Ability.performed += (ctx) => Ability();
         playerCamera = Camera.main;
     }
 
@@ -28,6 +27,13 @@ public class PlayerController : Controller
         Vector2 mousePos = Mouse.current.position.ReadValue();
         mousePos = playerCamera.ScreenToWorldPoint(mousePos);
         TriggerShapeshift(mousePos);
+    }
+
+    private void Ability()
+    {
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        mousePos = playerCamera.ScreenToWorldPoint(mousePos);
+        TriggerAbility(mousePos);
     }
 
     void Update()

@@ -13,6 +13,8 @@ public abstract class Controller : MonoBehaviour
 
     public event Action<Vector2> OnLaunchProjectile;
 
+    public event Action<Vector2> OnActivateAbility;
+
     public event Action<Vector2> OnShapeshift;
 
     private void Start()
@@ -37,5 +39,10 @@ public abstract class Controller : MonoBehaviour
     {
         OnShapeshift?.Invoke(target);
     }
-    
+
+    protected void TriggerAbility(Vector2 target)
+    {
+        OnActivateAbility?.Invoke(target);
+    }
+
 }
