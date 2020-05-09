@@ -22,6 +22,7 @@ public class Mover : Controllable
 
     private void Update()
     {
+        if (controller == null) return;
         deltaTimeCounter += Time.deltaTime;
 
         if (controller.movementDirection == Vector2.zero)

@@ -7,6 +7,8 @@ public class ProjectileLauncher : Controllable
     public float projectileVelocity = 6f;
     public float timeBetweenShots = 0.2f;
     public GameObject projectile;
+    public int damage = 1;
+    public Element damageType;
 
     private Collider2D launcherCollider;
     private float timeSinceLastShot = 10.0f;
@@ -33,6 +35,9 @@ public class ProjectileLauncher : Controllable
             Physics2D.IgnoreCollision(launcherCollider, shot.GetComponent<Collider2D>());
         }
         shot.GetComponent<Rigidbody2D>().velocity = (target - (Vector2)transform.position).normalized * projectileVelocity;
+        Projectile2D proj = shot.GetComponent<Projectile2D>();
+        proj.damage = damage;
+        proj.damageType = damageType;
         timeSinceLastShot = 0.0f;
     }
 
