@@ -1,8 +1,8 @@
-﻿using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChangeSceneOnDeath : OnDeathBehavior
 {
-
     public string sceneName;
     protected override void OnDeath()
     {
