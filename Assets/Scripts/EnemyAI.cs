@@ -31,6 +31,9 @@ public class EnemyAI : Controller
         movementDirection = playerPos - transform.position;
         TriggerProjectileAttack(playerPos);
     }
-
-
 }
+
+
+
+
+
