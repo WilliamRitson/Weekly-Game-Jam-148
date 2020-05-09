@@ -36,6 +36,7 @@ public class ProjectileLauncher : Controllable
         }
         shot.GetComponent<Rigidbody2D>().velocity = (target - (Vector2)transform.position).normalized * projectileVelocity;
         Projectile2D proj = shot.GetComponent<Projectile2D>();
+        proj.projectileVelocity = projectileVelocity;
         proj.damage = damage;
         proj.damageType = damageType;
         timeSinceLastShot = 0.0f;
