@@ -10,7 +10,9 @@ public class ControllerDebugger : MonoBehaviour
     void Start()
     {
         cont = GetComponent<Controller>();
-        cont.OnAttack += () => Debug.Log("attack!");
+        cont.OnAttack += () => Debug.Log("Attack!");
+        cont.OnLaunchProjectile += (target) => Debug.Log("Launch projectile at " + target);
+        cont.OnShapeshift += (target) => Debug.Log("Shapeshift at " + target);
     }
 
     void Update()

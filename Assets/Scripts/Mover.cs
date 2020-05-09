@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mover : MonoBehaviour
+public class Mover : Controllable
 {
     [SerializeField] private float initialSpeed;
     [SerializeField] private float maxMomentum;
@@ -19,7 +19,6 @@ public class Mover : MonoBehaviour
         momentum = 1;
         deltaTimeCounter = 0;
         rig = GetComponent<Rigidbody2D>();
-        controller = GetComponent<Controller>();
     }
 
     private void Update()
@@ -42,6 +41,17 @@ public class Mover : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (controller == null) return;
         rig.velocity = controller.movementDirection.normalized * initialSpeed * momentum;
+    }
+
+    protected override void AddController(Controller controller)
+    {
+        this.controller = controller;
+    }
+
+    protected override void RemoveController(Controller controller)
+    {
+        this.controller = null;
     }
 }

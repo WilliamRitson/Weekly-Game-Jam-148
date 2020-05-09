@@ -22,6 +22,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Shapeshift",
+                    "type": "Button",
+                    "id": "0d3725c3-bad6-4f6a-b780-0d8f051dde18",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "671c54a8-565d-4edf-9047-da970a67aa1e",
@@ -176,23 +184,34 @@
                 },
                 {
                     "name": "",
-                    "id": "6d619b64-f51d-492c-9e64-184e2b6f5aee",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard + Mouse",
-                    "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "b3f87d27-9f87-47a7-bf29-b17ca9f5ab76",
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6d619b64-f51d-492c-9e64-184e2b6f5aee",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard + Mouse",
+                    "action": "Shapeshift",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "00b574a7-3f58-428a-b1d0-f0557c41fd6d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shapeshift",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

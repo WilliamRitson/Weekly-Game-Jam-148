@@ -2,13 +2,12 @@
 
 
 [RequireComponent(typeof(Controller))]
-public class ProjectileLauncher : MonoBehaviour
+public class ProjectileLauncher : Controllable
 {
     public float projectileVelocity = 6f;
     public float timeBetweenShots = 0.2f;
     public GameObject projectile;
 
-    private Controller controller;
     private Collider2D launcherCollider;
     private float timeSinceLastShot = 10.0f;
 
@@ -18,6 +17,7 @@ public class ProjectileLauncher : MonoBehaviour
         launcherCollider = GetComponent<Collider2D>();
         controller.OnLaunchProjectile += LaunchAtPosition;
     }
+
 
     void Update()
     {
@@ -34,5 +34,15 @@ public class ProjectileLauncher : MonoBehaviour
         }
         shot.GetComponent<Rigidbody2D>().velocity = (target - (Vector2)transform.position).normalized * projectileVelocity;
         timeSinceLastShot = 0.0f;
+    }
+
+    protected override void AddController(Controller controller)
+    {
+        controller.OnLaunchProjectile += LaunchAtPosition;
+    }
+
+    protected override void RemoveController(Controller controller)
+    {
+        controller.OnLaunchProjectile -= LaunchAtPosition;
     }
 }
