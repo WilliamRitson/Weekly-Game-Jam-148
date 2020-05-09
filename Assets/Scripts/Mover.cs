@@ -10,7 +10,6 @@ public class Mover : Controllable
 
 
     private Rigidbody2D rig;
-    private Controller controller;
     private float deltaTimeCounter;
     private float momentum;
 
