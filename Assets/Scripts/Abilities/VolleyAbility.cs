@@ -29,4 +29,9 @@ public class VolleyAbility : Ability
             yield return new WaitForSeconds(delayBetweenShots);
         }
     }
+
+    public override bool ShouldUse(GameObject target)
+    {
+        return true;
+    }
 }

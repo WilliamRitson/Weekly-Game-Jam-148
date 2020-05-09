@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Tracing;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,10 +15,12 @@ public class EnemyAI : Controller
     private float lastSawPlayer = Mathf.Infinity;
 
     private float squaredMaxEngagmentDist;
+    private Ability ability;
 
     private void Awake()
     {
         squaredMaxEngagmentDist = maxEngagmentDist * maxEngagmentDist;
+        ability = GetComponent<Ability>();
     }
 
     void Update()
@@ -46,6 +49,10 @@ public class EnemyAI : Controller
 
         movementDirection = playerPos - transform.position;
         TriggerProjectileAttack(playerPos);
+        if (ability != null && ability.ShouldUse(player))
+        {
+            TriggerAbility(playerPos);
+        }
     }
 
     bool CanSeePlayer(Vector3 playerPos)

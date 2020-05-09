@@ -9,6 +9,8 @@ public class Flamethrower : Ability
     public float sizeRangeLow = 0.0f;
     public float sizeRangeHigh = 0.8f;
     public float delayBetweenShots = 0.3f;
+    public float projectileLifespan = 0.85f;
+    public float aiUseRange = 2f;
 
 
     ProjectileLauncher launcher;
@@ -30,8 +32,14 @@ public class Flamethrower : Ability
         {
             float angle = (angleTowardsTarget + Random.Range(-maxDisplacment, maxDisplacment)) * Mathf.Deg2Rad;
             Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-            launcher.LaunchInDirection(dir, 1 + Random.Range(sizeRangeLow, sizeRangeHigh), 0.8f);
+            launcher.LaunchInDirection(dir, 1 + Random.Range(sizeRangeLow, sizeRangeHigh), projectileLifespan);
             yield return new WaitForSeconds(delayBetweenShots);
         }
+    }
+
+    public override bool ShouldUse(GameObject target)
+    {
+        float range = launcher.projectileVelocity * projectileLifespan;
+        return (target.transform.position - transform.position).sqrMagnitude < range * range;
     }
 }

@@ -17,6 +17,8 @@ public abstract class Ability : Controllable
         lastUsed += Time.deltaTime;
     }
 
+    public abstract bool ShouldUse(GameObject target);
+
     protected abstract void ActivateAbility(Vector2 target);
 
     protected override void AddController(Controller controller)
