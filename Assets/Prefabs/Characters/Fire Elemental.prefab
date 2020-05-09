@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6310179728987820378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375120349427230601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c0e25d68c60244a83f3967864cc0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownTime: 10
+  numberOfProjectiles: 8
 --- !u!1001 &6872123057774162293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114,3 +128,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ef9abe98f4196438b3b673eb717bf4, type: 3}
+--- !u!1 &8375120349427230601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3126844044251436796, guid: d8ef9abe98f4196438b3b673eb717bf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6872123057774162293}
+  m_PrefabAsset: {fileID: 0}
