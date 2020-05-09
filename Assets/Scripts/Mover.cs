@@ -17,6 +17,6 @@ public class Mover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rig.velocity = controller.movementDirection * speed * Time.fixedDeltaTime;
+        rig.velocity = controller.movementDirection.normalized * speed;
     }
 }

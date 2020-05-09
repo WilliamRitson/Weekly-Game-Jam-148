@@ -42,12 +42,6 @@ public class Damagable : MonoBehaviour
             OnDeath?.Invoke();
         }
 
-        List<int> x = new List<int>();
-        List<int> y = x;
-        Debug.Log(x.Count); // Prints 0
-        y.Add(1);
-        Debug.Log(y.Count); // Prints 1
-
         return previous - currentLife;
     }
 
