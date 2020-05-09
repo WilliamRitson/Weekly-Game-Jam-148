@@ -5,7 +5,7 @@ using UnityEngine;
 public class VolleyAbility : Ability
 {
     public int numberOfProjectiles = 8;
-    public float delayBetweenShots = 0.4f;
+    public float delayBetweenShots = 0.1f;
 
 
     ProjectileLauncher launcher;
@@ -16,7 +16,6 @@ public class VolleyAbility : Ability
 
     protected override void ActivateAbility(Vector2 target)
     {
-        Debug.Log("Fire volley");
         StartCoroutine(LaunchOverTime());
     }
 
@@ -25,9 +24,8 @@ public class VolleyAbility : Ability
         for (int i = 0; i < numberOfProjectiles; i++)
         {
             float angle = Mathf.PI * 2 / numberOfProjectiles * i;
-            Vector2 vec = transform.forward * Mathf.Cos(angle) + transform.right * Mathf.Sin(angle);
-            Debug.Log("Fire shot at angle " + angle + " in vec " + vec);
-            launcher.LaunchInDirection(vec);
+            Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+            launcher.LaunchInDirection(dir);
             yield return new WaitForSeconds(delayBetweenShots);
         }
     }

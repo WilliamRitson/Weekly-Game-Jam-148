@@ -684,6 +684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 10
   numberOfProjectiles: 8
+  delayBetweenShots: 0.1
 --- !u!1001 &2082761567
 PrefabInstance:
   m_ObjectHideFlags: 0
