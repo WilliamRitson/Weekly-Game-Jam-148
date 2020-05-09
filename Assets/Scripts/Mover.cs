@@ -21,12 +21,11 @@ public class Mover : Controllable
 
     protected override void AddController(Controller controller)
     {
-        Debug.Log(gameObject + " mover controller = " + controller);
         this.controller = controller;
     }
 
     protected override void RemoveController(Controller controller)
     {
-        Debug.Log(gameObject + " mover controller RemoveController");
+        this.controller = null;
     }
 }

@@ -19,7 +19,6 @@ public abstract class Controller : MonoBehaviour
     {
         foreach (Controllable controllable in GetComponents<Controllable>())
         {
-            Debug.Log("set controller of " + controllable + " to " + this);
             controllable.SetController(this);
         }
     }

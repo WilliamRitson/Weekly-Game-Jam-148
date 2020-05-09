@@ -26,8 +26,8 @@ public abstract class Controllable : MonoBehaviour
 
     private void OnDestroy()
     {
-        //if (controller)
-        //    RemoveController(controller);
+        if (controller)
+            RemoveController(controller);
     }
 
 }

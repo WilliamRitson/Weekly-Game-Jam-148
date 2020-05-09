@@ -9,9 +9,11 @@ public class Shapeshifter : Controllable
     private bool onCoolDown = false;
     private void Shapeshift(Vector2 target)
     {
-        GameObject entity = Physics2D.OverlapCircleAll(target, 1)
-            .First(col => col.GetComponent<EnemyAI>() != null).gameObject;
-        GameObject newForm = Instantiate(entity, transform.position, transform.rotation);
+        var shiftable = Physics2D.OverlapCircleAll(target, 1)
+            .FirstOrDefault(col => col.GetComponent<EnemyAI>() != null);
+        if (!shiftable) return;
+
+        GameObject newForm = Instantiate(shiftable.gameObject, transform.position, transform.rotation);
         Destroy(newForm.GetComponent<EnemyAI>());
         newForm.AddComponent<Shapeshifter>();
         newForm.AddComponent<PlayerController>();
