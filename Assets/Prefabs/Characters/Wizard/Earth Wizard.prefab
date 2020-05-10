@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 10
-  boundingProjectile: {fileID: 0}
+  boundingProjectile: {fileID: 7470936336945256541, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+    type: 3}
   bouncingAbilityDuration: 0
+  sizeMultiplier: 0
 --- !u!1001 &3193969066199605724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31,7 +33,7 @@ PrefabInstance:
         type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 7470936336945256541, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+      objectReference: {fileID: 7470936336945256541, guid: 1a95904930f3e0b46a162cbbe0115bdc,
         type: 3}
     - target: {fileID: 2882040427668367955, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}

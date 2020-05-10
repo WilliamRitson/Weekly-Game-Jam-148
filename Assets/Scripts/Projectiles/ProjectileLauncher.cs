@@ -32,7 +32,7 @@ public class ProjectileLauncher : Controllable
         LaunchInDirection(target - (Vector2)transform.position);
     }
 
-    public void LaunchInDirection(Vector2 dir, float sizeMultilpier = 1, float lifetimeModifier = -1)
+    public void LaunchInDirection(Vector2 dir, float sizeMultilpier = 1, float lifetimeModifier = -1, int damageModifier = -1)
     {
         GameObject shot = Instantiate(projectile, transform.position, transform.rotation);
         if (launcherCollider)
@@ -47,6 +47,11 @@ public class ProjectileLauncher : Controllable
         if (lifetimeModifier != -1)
         {
             shot.GetComponent<Temporary>().lifespan = lifetimeModifier;
+        }
+        if (damageModifier != -1)
+        {
+            shot.GetComponent<Projectile2D>().damage += damageModifier;
+
         }
         Projectile2D proj = shot.GetComponent<Projectile2D>();
 

@@ -6,6 +6,7 @@ public class BoulderAbility : Ability
 {
     [SerializeField] private GameObject boundingProjectile;
     [SerializeField] private float bouncingAbilityDuration;
+    [SerializeField] private float sizeMultiplier;
 
     private ProjectileLauncher projectileLauncher;
     private GameObject initialProjectile2D;
@@ -23,13 +24,9 @@ public class BoulderAbility : Ability
 
     protected override void ActivateAbility(Vector2 target)
     {
-        StartCoroutine(UseBouncingProjectile());
-    }
-
-    public IEnumerator UseBouncingProjectile()
-    {
         projectileLauncher.projectile = boundingProjectile;
-        yield return new WaitForSeconds(bouncingAbilityDuration);
+        projectileLauncher.LaunchInDirection(target - (Vector2)transform.position, 3, 15, 4);
         projectileLauncher.projectile = initialProjectile2D;
     }
+
 }
