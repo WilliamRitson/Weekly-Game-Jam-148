@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Threading.Tasks;
+﻿using Pathfinding;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class EnemyAI : Controller
 {
@@ -15,26 +12,38 @@ public class EnemyAI : Controller
     private float maxEngagmentDist = 8.0f;
     [SerializeField]
     private float rememberPlayerTime = 2.0f;
-    private float lastSawPlayer = Mathf.Infinity;
 
+    public float repathTime = 0.5f;
+
+    private float lastSawPlayer = Mathf.Infinity; 
     private float squaredMaxEngagmentDist;
     private Ability ability;
 
-    Vector3 playerPos;
+    private Vector3 goalPos;
+    private Vector3 originPos;
+    private Vector3 lastPathPos;
+    private Seeker seeker;
+    private Path path;
+    
+    int currentWaypoint = 0;
 
-    private void Awake()
+    private void Start()
     {
+        ConnectedToControllables();
         player = GameObject.FindGameObjectWithTag("Player");
         squaredMaxEngagmentDist = maxEngagmentDist * maxEngagmentDist;
-        playerPos = player.transform.position;
-
+        seeker = GetComponent<Seeker>();
         ability = GetComponent<Ability>();
+        originPos = transform.position;
+        goalPos = originPos;
+        StartCoroutine(Repath());
     }
 
     void Update()
     {
+        FollowPath();
 
-        playerPos = player.transform.position;
+        Vector3 playerPos = player.transform.position;
         if ((transform.position - playerPos).sqrMagnitude > squaredMaxEngagmentDist)
 
         if (player == null)
@@ -54,17 +63,57 @@ public class EnemyAI : Controller
 
         if (lastSawPlayer > rememberPlayerTime)
         {
-            movementDirection = Vector3.zero;
+            goalPos = originPos;
             return;
         }
 
-        movementDirection = playerPos - transform.position;
+        goalPos = playerPos;
 
-        TriggerProjectileAttack(playerPos);
+        TriggerProjectileAttack(goalPos);
         if (ability != null && ability.ShouldUse(player))
         {
-            TriggerAbility(playerPos);
+            TriggerAbility(goalPos);
         }
+    }
+
+    IEnumerator Repath ()
+    {
+        while (enabled)
+        {
+            yield return new WaitForSeconds(repathTime);
+            if (goalPos != lastPathPos) {
+                lastPathPos = goalPos;
+                seeker.StartPath(transform.position, goalPos, OnPathFound);
+            }
+        }
+    }
+
+    void FollowPath()
+    {
+        if (path == null)
+        {
+            movementDirection = Vector3.zero;
+            return;
+        }
+        if (currentWaypoint >= path.vectorPath.Count)
+        {
+            path = null;
+            return;
+        }
+        Vector3 nextPoint = path.vectorPath[currentWaypoint];
+        Vector3 towardsNextPoint = nextPoint - transform.position;
+        movementDirection = towardsNextPoint;
+        if (towardsNextPoint.sqrMagnitude < 0.5)
+        {
+            currentWaypoint++;
+        }
+    }
+
+    void OnPathFound(Path newPath)
+    {
+        if (newPath.error) return;
+        currentWaypoint = 0;
+        path = newPath;
     }
 
     bool CanSeePlayer(Vector3 playerPos)
