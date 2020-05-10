@@ -7,18 +7,6 @@ public class WindShieldAbility : Ability
    [SerializeField] private float abilityDuration;
    [SerializeField] private ProjectileSquander projectileSquander;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public override bool ShouldUse(GameObject target)
     {
         return true;
@@ -26,7 +14,6 @@ public class WindShieldAbility : Ability
 
     protected override void ActivateAbility(Vector2 target)
     {
-        print("Activated");
         StartCoroutine(DeactivateAbility());
     }
 

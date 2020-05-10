@@ -19,7 +19,6 @@ public abstract class Ability : Controllable
     {
         yield return new WaitForSeconds(cooldownTime);
         onCooldown = false;
-
     }
 
     public abstract bool ShouldUse(GameObject target);
