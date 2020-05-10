@@ -5,6 +5,10 @@ using System.Linq;
 [RequireComponent(typeof(PlayerController))]
 public class Shapeshifter : Controllable
 {
+
+    public float speedBonus = 1.0f;
+    public float projectileCooldownMultiplier = 0.8f;
+
     private float cooldown = 10f;
     private bool onCoolDown = false;
 
@@ -29,6 +33,8 @@ public class Shapeshifter : Controllable
         newForm.AddComponent<Shapeshifter>();
         newForm.AddComponent<CameraCenter>();
         newForm.AddComponent<PlayerController>();
+        newForm.GetComponent<Mover>().initialSpeed += speedBonus;
+        newForm.GetComponent<ProjectileLauncher>().timeBetweenShots *= projectileCooldownMultiplier;
         Destroy(gameObject);
     }
 
