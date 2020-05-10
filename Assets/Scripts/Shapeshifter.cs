@@ -8,6 +8,7 @@ public class Shapeshifter : Controllable
 
     public float speedBonus = 1.0f;
     public float projectileCooldownMultiplier = 0.8f;
+    public int lifeBonus = 2;
 
     private float cooldown = 10f;
     private bool onCoolDown = false;
@@ -35,6 +36,9 @@ public class Shapeshifter : Controllable
         newForm.AddComponent<PlayerController>();
         newForm.GetComponent<Mover>().initialSpeed += speedBonus;
         newForm.GetComponent<ProjectileLauncher>().timeBetweenShots *= projectileCooldownMultiplier;
+        var health = newForm.GetComponent<Damagable>() ;
+        health.MaximumLife += lifeBonus;
+        health.CurrentLife = health.MaximumLife;
         Destroy(gameObject);
     }
 
