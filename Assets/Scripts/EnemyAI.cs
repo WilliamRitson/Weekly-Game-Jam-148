@@ -9,8 +9,6 @@ public class EnemyAI : Controller
 {
     public float moveSpeed = 5f;
 
-
-
     GameObject player;
 
     [SerializeField]
@@ -22,11 +20,7 @@ public class EnemyAI : Controller
     private float squaredMaxEngagmentDist;
     private Ability ability;
 
-    //private Vector3 startingPosition;
     Vector3 playerPos;
-    Vector2 movement;
-
-    private Rigidbody2D rb;
 
     private void Awake()
     {
@@ -34,15 +28,7 @@ public class EnemyAI : Controller
         squaredMaxEngagmentDist = maxEngagmentDist * maxEngagmentDist;
         playerPos = player.transform.position;
 
-        //startingPosition = transform.position;
-    }
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-
         ability = GetComponent<Ability>();
-
     }
 
     void Update()
@@ -73,10 +59,6 @@ public class EnemyAI : Controller
         }
 
         movementDirection = playerPos - transform.position;
-        float angle = Mathf.Atan2(movementDirection.y, movementDirection.x)*Mathf.Rad2Deg;
-        rb.rotation = angle;
-        movementDirection.Normalize();
-        movement = movementDirection;
 
         TriggerProjectileAttack(playerPos);
         if (ability != null && ability.ShouldUse(player))
@@ -94,25 +76,6 @@ public class EnemyAI : Controller
         RaycastHit2D cast = Physics2D.Raycast(transform.position, playerPos - transform.position);
         return cast.collider.gameObject == player;
     }
-
-    private void FixedUpdate()
-    {
-        moveCharacter(movement);
-    }
-    void moveCharacter(Vector2 direction)
-    {
-        rb.MovePosition((Vector2)transform.position + (moveSpeed * direction * Time.deltaTime));
-    }
-
-
-
-    //private Vector3 PatrollingPosition()
-    //{
-    //    Vector3 randomDir = new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
-    //    return startingPosition + randomDir * UnityEngine.Random.Range(10f, 50f); 
-    //}
-
-
 
 }
 
