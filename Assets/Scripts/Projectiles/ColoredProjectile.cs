@@ -13,12 +13,14 @@ public class ColoredProjectile : MonoBehaviour
         renderer.color = color;
     }
 
+    private static Color brown = new Color(114f / 255f, 62f / 255f, 15f / 255f, 1);
+
     private Color GetElementColor(Element element)
     {
         switch (element)
         {
             case Element.Earth:
-                return new Color(40, 26, 13);
+                return brown;
             case Element.Fire:
                 return Color.red;
             case Element.Water:

@@ -22,6 +22,26 @@ PrefabInstance:
       propertyPath: resistance
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5042322418128439364, guid: 2792157f2f5539d4f927616669fdad61,
+        type: 3}
+      propertyPath: numberOfProjectiles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042322418128439364, guid: 2792157f2f5539d4f927616669fdad61,
+        type: 3}
+      propertyPath: sizeRangeHigh
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042322418128439364, guid: 2792157f2f5539d4f927616669fdad61,
+        type: 3}
+      propertyPath: sizeRangeLow
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042322418128439364, guid: 2792157f2f5539d4f927616669fdad61,
+        type: 3}
+      propertyPath: projectileLifespan
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6172214478714121963, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}
       propertyPath: m_Name
