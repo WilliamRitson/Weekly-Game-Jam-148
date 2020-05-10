@@ -18,6 +18,8 @@ MonoBehaviour:
   sizeRangeLow: 0
   sizeRangeHigh: 0.8
   delayBetweenShots: 0.1
+  projectileLifespan: 0.85
+  aiUseRange: 2
 --- !u!1001 &9136911161355155479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25,6 +27,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3126844044251436792, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436792, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.20714669
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436792, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.20714669
+      objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -100,6 +117,16 @@ PrefabInstance:
       propertyPath: currentLife
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: weakness
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: resistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8282411493121547717, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: timeBetweenShots
@@ -116,6 +143,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7470936336945256541, guid: 1a95904930f3e0b46a162cbbe0115bdc,
         type: 3}
+    - target: {fileID: 8282411493121547717, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ef9abe98f4196438b3b673eb717bf4, type: 3}
 --- !u!1 &6172214478714121963 stripped

@@ -43,15 +43,13 @@ public class EnemyAI : Controller
     {
         FollowPath();
 
-        Vector3 playerPos = player.transform.position;
-        if ((transform.position - playerPos).sqrMagnitude > squaredMaxEngagmentDist)
-
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
             if (!player) return;
         }
 
+        Vector3 playerPos = player.transform.position;
         if (CanSeePlayer(playerPos))
         {
             lastSawPlayer = 0;
