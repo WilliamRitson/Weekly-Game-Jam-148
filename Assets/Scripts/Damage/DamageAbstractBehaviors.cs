@@ -4,7 +4,7 @@
 [RequireComponent(typeof(Damagable))]
 public abstract class OnDeathBehavior : MonoBehaviour
 {
-    private Damagable damagable;
+    protected Damagable damagable;
 
     private void Start()
     {
@@ -33,7 +33,7 @@ public abstract class OnDamageBehavior : MonoBehaviour
 
     private void OnDestroy()
     {
-        damagable.OnDamaged += OnDamaged;
+        damagable.OnDamaged -= OnDamaged;
     }
 
     protected abstract void OnDamaged(int damage);
@@ -52,7 +52,7 @@ public abstract class OnHealthChangeBehavior : MonoBehaviour
 
     private void OnDestroy()
     {
-        damagable.OnHealthChange += OnHealthChange;
+        damagable.OnHealthChange -= OnHealthChange;
     }
 
     protected abstract void OnHealthChange(int health);

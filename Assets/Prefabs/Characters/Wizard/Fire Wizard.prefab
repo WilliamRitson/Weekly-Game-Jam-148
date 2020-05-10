@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5042322418128439364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6172214478714121963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21fb203d6ea33054a910b8e54052ab7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownTime: 10
+  numberOfProjectiles: 6
+  maxDisplacment: 30
+  sizeRangeLow: 0
+  sizeRangeHigh: 0.8
+  delayBetweenShots: 0.1
+--- !u!1001 &9136911161355155479
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436795, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: initialSpeed
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436796, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_Name
+      value: Fire Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: maximumLife
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: currentLife
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282411493121547717, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: timeBetweenShots
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282411493121547717, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: projectileVelocity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282411493121547717, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7470936336945256541, guid: 1a95904930f3e0b46a162cbbe0115bdc,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8ef9abe98f4196438b3b673eb717bf4, type: 3}
+--- !u!1 &6172214478714121963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3126844044251436796, guid: d8ef9abe98f4196438b3b673eb717bf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 9136911161355155479}
+  m_PrefabAsset: {fileID: 0}

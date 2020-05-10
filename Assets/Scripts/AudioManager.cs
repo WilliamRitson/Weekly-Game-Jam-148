@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
+    public static bool IsSoundsMuted;
+    public static bool IsMusicMuted;
 
-
+    [SerializeField] private int gameSceneBuildIndex;
     [SerializeField] private Sprite playAudioSprite;
     [SerializeField] private Sprite muteAudioSprite;
 
@@ -22,9 +24,6 @@ public class AudioManager : MonoBehaviour
     [Header("Sounds Info")]
     [SerializeField] private SoundInfo soundInfo;
 
-    private static bool isSoundsMuted = false;
-
-    private static bool isMusicMuted;
 
 
     [System.Serializable]
@@ -65,27 +64,20 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
     }
 
     private void Start()
     {
-        isMusicMuted = false;
-        isSoundsMuted = false;
+        IsMusicMuted = false;
+        IsSoundsMuted = false;
         PlayTitleMusic();
     }
 
     public void PlayTitleMusic()
     {
-        isMusicMuted = false;
-        isSoundsMuted = false;
+        IsMusicMuted = false;
+        IsSoundsMuted = false;
         audioSourceMusic.clip = soundInfo.titleMusicClip;
         audioSourceMusic.loop = true;
         audioSourceMusic.Play();
@@ -93,40 +85,47 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMainMusic()
     {
-        isMusicMuted = false;
-        isSoundsMuted = false;
+        IsMusicMuted = false;
+        IsSoundsMuted = false;
         audioSourceMusic.clip = soundInfo.mainMusicClip;
         audioSourceMusic.loop = true;
         audioSourceMusic.Play();
     }
 
-    public void MuteMainMusic()
+    public void MuteAudio()
     {
-        isMusicMuted = true;
-        isSoundsMuted = true;
+        IsMusicMuted = true;
+        IsSoundsMuted = true;
         audioSourceMusic.Pause();
 
-        isMusicMuted = true;
-        isSoundsMuted = true;
+        IsMusicMuted = true;
+        IsSoundsMuted = true;
         audioSourceMusic.Pause();
     }
 
 
-    public void UpdateMusicState()
+    public void UpdateAudioState()
     {
-        if (isMusicMuted)
+        if (IsMusicMuted && SceneManager.GetActiveScene().buildIndex == gameSceneBuildIndex)
         {
+            print("Main played");
             PlayMainMusic();
+        }
+        else if (IsMusicMuted && SceneManager.GetActiveScene().buildIndex != gameSceneBuildIndex)
+        {
+            print("Start played");
+            PlayTitleMusic();
         }
         else
         {
-            MuteMainMusic();
+            print("All Mute");
+            MuteAudio();
         }
     }
 
     public void PlayRandomDamageSound(AudioClip[] audioClips)
     {
-        if (audioClips != null && !isSoundsMuted)
+        if (audioClips != null && !IsSoundsMuted)
         {
             int rand = Random.Range(0, audioClips.Length);
             if (rand == 1)
@@ -142,7 +141,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySheepDiedAudio()
     {
-        if (!isSoundsMuted)
+        if (!IsSoundsMuted)
         {
             audioSourceSounds.PlayOneShot(soundInfo.sheepDiedClip, soundInfo.sheepDiedVolume);
         }
@@ -150,7 +149,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayWolfSoundAudio()
     {
-        if (!isSoundsMuted)
+        if (!IsSoundsMuted)
         {
             audioSourceSounds.PlayOneShot(soundInfo.wolfSoundClip, soundInfo.wolfSoundVolume);
         }
@@ -158,7 +157,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayWolfDiedAudio()
     {
-        if (!isSoundsMuted)
+        if (!IsSoundsMuted)
         {
             audioSourceSounds.PlayOneShot(soundInfo.wolfDiedClip, soundInfo.wolfDiedVolume);
         }
@@ -166,7 +165,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayWolfHurtAudio()
     {
-        if (!isSoundsMuted)
+        if (!IsSoundsMuted)
         {
             audioSourceSounds.PlayOneShot(soundInfo.wolfHurtClip, soundInfo.wolfHurtVolume);
         }
@@ -174,7 +173,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayWolfAttackAudio()
     {
-        if (!isSoundsMuted)
+        if (!IsSoundsMuted)
         {
             audioSourceSounds.PlayOneShot(soundInfo.wolfAttackClip, soundInfo.wolfAttackVolume);
         }
@@ -182,7 +181,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayThrowWeaponAudio()
     {
-        if (!isSoundsMuted)
+        if (!IsSoundsMuted)
         {
             audioSourceSounds.PlayOneShot(soundInfo.throwWeaponClip, soundInfo.throwWeaponVolume);
         }
@@ -190,7 +189,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayHitWeaponAudio()
     {
-        if (!isSoundsMuted)
+        if (!IsSoundsMuted)
         {
             audioSourceSounds.PlayOneShot(soundInfo.hitWeaponClip, soundInfo.hitWeaponVolume);
         }
@@ -198,7 +197,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBuildTowerAudio()
     {
-        if (!isSoundsMuted)
+        if (!IsSoundsMuted)
         {
             audioSourceSounds.PlayOneShot(soundInfo.buildTowerClip, soundInfo.buildTowerVolume);
         }
@@ -206,7 +205,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayDestroyTowerAudio()
     {
-        if (!isSoundsMuted)
+        if (!IsSoundsMuted)
         {
             audioSourceSounds.PlayOneShot(soundInfo.destroyTowerClip, soundInfo.destroyTowerVolume);
         }
@@ -214,7 +213,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayUpgradeTowerAudio()
     {
-        if (!isSoundsMuted)
+        if (!IsSoundsMuted)
         {
             audioSourceSounds.PlayOneShot(soundInfo.upgradeTowerClip, soundInfo.upgradeTowerVolume);
         }
@@ -222,7 +221,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayHunterDiedAudio()
     {
-        if (!isSoundsMuted)
+        if (!IsSoundsMuted)
         {
             audioSourceSounds.PlayOneShot(soundInfo.hunterDiedClip, soundInfo.hunterDiedVolume);
         }

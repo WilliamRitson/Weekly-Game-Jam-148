@@ -1,11 +1,26 @@
-﻿using UnityEngine.SceneManagement;
+
+using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ChangeSceneOnDeath : OnDeathBehavior
 {
+    [SerializeField] private float secBeforLoadingStartScene;//seconds to wait before load the start scene after the player died
+    public int startSceneBuildIndex;
 
-    public string sceneName;
     protected override void OnDeath()
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(LoadStartScene());
+        damagable.OnDeath -= OnDeath;
+    }
+
+    public IEnumerator LoadStartScene()
+    {
+        yield return new WaitForSeconds(secBeforLoadingStartScene);
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        SceneManager.LoadScene(startSceneBuildIndex);
     }
 }
