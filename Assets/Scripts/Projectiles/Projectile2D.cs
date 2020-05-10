@@ -17,7 +17,7 @@ public class Projectile2D : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
-        Debug.Log("proj colide with" + col.gameObject);
+        //Debug.Log("proj colide with" + col.gameObject);
         Damagable damagable = col.collider.GetComponent<Damagable>();
         if (damagable) {
             damagable.TakeDamage(damage, damageType);
@@ -33,14 +33,11 @@ public class Projectile2D : MonoBehaviour
 
         if (rand == 0)
         {
-            print("Affect");
-            
             rig.AddForce(Vector2.right * projectileVelocity, ForceMode2D.Impulse);
         }
         else
         {
             rig.AddForce(Vector2.left * projectileVelocity, ForceMode2D.Impulse);
-            print("Affect");
         }
     }
 }

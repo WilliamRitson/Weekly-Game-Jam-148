@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ProjectileSquander : MonoBehaviour
 {
+    [SerializeField] private GameObject parent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,15 @@ public class ProjectileSquander : MonoBehaviour
     {
         if (collision.CompareTag("Projectile"))
         {
-            collision.GetComponent<Projectile2D>().GetAffectedBySquander();
+            Projectile2D projectile2D = collision.GetComponent<Projectile2D>();
+            if (projectile2D.isTargetingPlayer && parent.CompareTag("Player"))
+            {
+                projectile2D.GetAffectedBySquander();
+            }
+            else if (!projectile2D.isTargetingPlayer && parent.CompareTag("Enemy"))
+            {
+                projectile2D.GetAffectedBySquander();
+            }
         }
     }
 }

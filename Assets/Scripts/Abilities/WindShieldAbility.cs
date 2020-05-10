@@ -21,7 +21,7 @@ public class WindShieldAbility : Ability
 
     public override bool ShouldUse(GameObject target)
     {
-        throw new System.NotImplementedException();
+        return true;
     }
 
     protected override void ActivateAbility(Vector2 target)
