@@ -8,7 +8,6 @@ public class ProjectileTracer : MonoBehaviour
     [HideInInspector] public Transform target;
     
     [SerializeField] private Projectile2D Projectile2D;
-    [SerializeField] private float secToDestroy;//seconds to destroy the projectile if it did not hit anything
     [SerializeField] private float trackingDuration;//time that the pullet will keep follow the target in it and after that time it'll go strieat till it destroy
 
 
@@ -31,8 +30,6 @@ public class ProjectileTracer : MonoBehaviour
             target = playerTransform;
             Projectile2DRig.velocity = Vector2.zero;
         }
-
-        Destroy(gameObject, secToDestroy);//destroy the projectile if it did not hit anything
     }
 
     // Update is called once per frame

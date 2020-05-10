@@ -8,15 +8,16 @@ public class Projectile2D : MonoBehaviour
     public int damage = 1;
     public Element damageType;
     public bool isAffetedBySquander;
-    private Rigidbody2D rig;
+    protected Rigidbody2D rig;
 
-    private void Start()
+    protected void Start()
     {
+        print("Called in Main");
         isAffetedBySquander = false;
         rig = GetComponent<Rigidbody2D>();
     }
 
-    private void OnCollisionEnter2D(Collision2D col) {
+    protected virtual void OnCollisionEnter2D(Collision2D col) {
         //Debug.Log("proj colide with" + col.gameObject);
         Damagable damagable = col.collider.GetComponent<Damagable>();
         if (damagable) {
