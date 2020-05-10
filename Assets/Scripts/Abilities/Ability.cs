@@ -1,20 +1,25 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public abstract class Ability : Controllable
 {
     public float cooldownTime = 10.0f;
-    private float lastUsed = Mathf.Infinity;
+    private bool onCooldown = false;
+    protected float lastUsed = Mathf.Infinity;
 
-    void Trigger(Vector2 target)
+    protected virtual void Trigger(Vector2 target)
     {
-        if (lastUsed < cooldownTime) return;
-        lastUsed = 0;
+        if (onCooldown) return;
+        onCooldown = true;
+        StartCoroutine(Cooldown());
         ActivateAbility(target);
     }
 
-    private void Update()
+    private IEnumerator Cooldown()
     {
-        lastUsed += Time.deltaTime;
+        yield return new WaitForSeconds(cooldownTime);
+        onCooldown = false;
+
     }
 
     public abstract bool ShouldUse(GameObject target);
