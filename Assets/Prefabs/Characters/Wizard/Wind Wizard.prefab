@@ -1,5 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5861616854318811115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4519576129196276951}
+  - component: {fileID: 7107267150000325287}
+  - component: {fileID: 6456854788053861999}
+  m_Layer: 0
+  m_Name: Squander
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4519576129196276951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5861616854318811115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 621541000085318113}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &7107267150000325287
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5861616854318811115}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.12
+--- !u!114 &6456854788053861999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5861616854318811115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c09d465145214843a07941e5648222a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1352459246623394198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621541000085318119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b888030cf7ff524c877a5c1490c80b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownTime: 10
+  abilityDuration: 3
+  projectileSquander: {fileID: 6456854788053861999}
 --- !u!1001 &6703665644109956876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21,6 +96,11 @@ PrefabInstance:
         type: 3}
       propertyPath: resistance
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042322418128439364, guid: 2792157f2f5539d4f927616669fdad61,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6172214478714121963, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}
@@ -99,3 +179,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2792157f2f5539d4f927616669fdad61, type: 3}
+--- !u!1 &621541000085318119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6172214478714121963, guid: 2792157f2f5539d4f927616669fdad61,
+    type: 3}
+  m_PrefabInstance: {fileID: 6703665644109956876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &621541000085318113 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6172214478714121965, guid: 2792157f2f5539d4f927616669fdad61,
+    type: 3}
+  m_PrefabInstance: {fileID: 6703665644109956876}
+  m_PrefabAsset: {fileID: 0}

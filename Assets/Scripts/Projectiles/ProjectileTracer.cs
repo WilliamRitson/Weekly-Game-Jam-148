@@ -38,7 +38,7 @@ public class ProjectileTracer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target != null && Time.time - Time.deltaTime - creatTime <= trackingDuration)
+        if (target != null && Time.time - Time.deltaTime - creatTime <= trackingDuration && !Projectile2D.isAffetedBySquander)
         {
             if (Projectile2DRig.velocity != Vector2.zero)
             {
@@ -58,7 +58,7 @@ public class ProjectileTracer : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (target != null && Time.time - Time.deltaTime - creatTime >= trackingDuration)
+        if (Time.time - Time.deltaTime - creatTime >= trackingDuration && !Projectile2D.isAffetedBySquander)
         {
             Projectile2DRig.velocity = Projectile2D.transform.right * Projectile2D.projectileVelocity;
         }
