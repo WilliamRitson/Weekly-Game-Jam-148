@@ -63,6 +63,7 @@ MonoBehaviour:
   target: {fileID: 0}
   Projectile2D: {fileID: 2476219766543572348}
   secToDestroy: 3
+  trackingDuration: 0.5
 --- !u!1 &7470936336945256541
 GameObject:
   m_ObjectHideFlags: 0

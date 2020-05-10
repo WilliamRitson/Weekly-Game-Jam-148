@@ -9,21 +9,27 @@ public class ProjectileTracer : MonoBehaviour
     
     [SerializeField] private Projectile2D Projectile2D;
     [SerializeField] private float secToDestroy;//seconds to destroy the projectile if it did not hit anything
+    [SerializeField] private float trackingDuration;//time that the pullet will keep follow the target in it and after that time it'll go strieat till it destroy
+
 
     private float x, y, angle;
-    private Rigidbody2D rig;
+    private Rigidbody2D Projectile2DRig;
     private Transform playerTransform;
+    private Vector2 projectileOldVelocity;//the vilocity which we throw tge projectile with
+    private float creatTime;//the time when this projectile has been created
 
     // Start is called before the first frame update
     void Start()
     {
-        rig = Projectile2D.GetComponent<Rigidbody2D>();
+        creatTime = Time.time;
+        Projectile2DRig = Projectile2D.GetComponent<Rigidbody2D>();
+        projectileOldVelocity = Projectile2DRig.velocity;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
         if (Projectile2D.isTargetingPlayer)
         {
             target = playerTransform;
-            rig.velocity = Vector2.zero;
+            Projectile2DRig.velocity = Vector2.zero;
         }
 
         Destroy(gameObject, secToDestroy);//destroy the projectile if it did not hit anything
@@ -32,11 +38,11 @@ public class ProjectileTracer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target != null)
+        if (target != null && Time.time - Time.deltaTime - creatTime <= trackingDuration)
         {
-            if (rig.velocity != Vector2.zero)
+            if (Projectile2DRig.velocity != Vector2.zero)
             {
-                rig.velocity = Vector2.zero;
+                Projectile2DRig.velocity = Vector2.zero;
             }
 
             x = Projectile2D.transform.position.x;
@@ -49,11 +55,15 @@ public class ProjectileTracer : MonoBehaviour
             Projectile2D.transform.Rotate(new Vector3(0, 0, 180));
             Projectile2D.transform.position += Projectile2D.transform.right * Projectile2D.projectileVelocity * Time.deltaTime;
         }
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
     }
+    private void FixedUpdate()
+    {
+        if (target != null && Time.time - Time.deltaTime - creatTime >= trackingDuration)
+        {
+            Projectile2DRig.velocity = Projectile2D.transform.right * Projectile2D.projectileVelocity;
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
