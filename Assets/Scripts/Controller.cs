@@ -19,6 +19,11 @@ public abstract class Controller : MonoBehaviour
 
     private void Start()
     {
+        ConnectedToControllables();
+    }
+
+    protected void ConnectedToControllables()
+    {
         foreach (Controllable controllable in GetComponents<Controllable>())
         {
             controllable.SetController(this);

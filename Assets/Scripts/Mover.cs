@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mover : Controllable
 {
-    [SerializeField] private float initialSpeed;
+    [SerializeField] public float initialSpeed;
     [SerializeField] private float maxMomentum;
     [SerializeField] private float timeToInreaseSpeed;
 
