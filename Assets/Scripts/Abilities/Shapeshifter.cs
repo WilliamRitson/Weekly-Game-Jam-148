@@ -28,7 +28,6 @@ public class Shapeshifter : Ability
             var playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerUI>();
             var dmg = GetComponent<Damagable>();
             playerUI.AttachTo(this, GetComponents<Ability>().FirstOrDefault(abilty => abilty != this), dmg);
-            Debug.Log(dmg);
 
             if (justShifted)
             {
