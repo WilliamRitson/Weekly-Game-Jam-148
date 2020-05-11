@@ -42,7 +42,7 @@ public class Damagable : MonoBehaviour
             OnDeath?.Invoke();
         }
 
-        return previous - currentLife;
+        return Math.Abs(previous - currentLife);
     }
 
     /// <summary>Sets the health of this entity to a value greater than 0. 
