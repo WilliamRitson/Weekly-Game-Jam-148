@@ -220,6 +220,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+<<<<<<< HEAD:Assets/Sprites/Tile/New Palette.prefab
   - first: {x: -2, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -230,6 +231,9 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
   - first: {x: -1, y: 0, z: 0}
+=======
+  - first: {x: -6, y: 2, z: 0}
+>>>>>>> 86116ff9cb9820d0b3696d234379f38f6b7c5053:Assets/Sprites/TilePallete/New Palette.prefab
     second:
       serializedVersion: 2
       m_TileIndex: 2
@@ -252,6 +256,15 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 2
       m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -7, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -359,8 +372,13 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD:Assets/Sprites/Tile/New Palette.prefab
   m_Origin: {x: -9, y: -3, z: 0}
   m_Size: {x: 14, y: 4, z: 1}
+=======
+  m_Origin: {x: -8, y: -1, z: 0}
+  m_Size: {x: 8, y: 5, z: 1}
+>>>>>>> 86116ff9cb9820d0b3696d234379f38f6b7c5053:Assets/Sprites/TilePallete/New Palette.prefab
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -420,14 +438,66 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
+<<<<<<< HEAD:Assets/Sprites/Tile/New Palette.prefab
   m_ChunkCullingBounds: {x: 1.5, y: 2, z: 0}
+=======
+  m_ChunkCullingBounds: {x: 1.5, y: 2.5, z: 0}
+>>>>>>> 86116ff9cb9820d0b3696d234379f38f6b7c5053:Assets/Sprites/TilePallete/New Palette.prefab
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+<<<<<<< HEAD:Assets/Sprites/Tile/New Palette.prefab
 --- !u!114 &-9204900769579139548
+=======
+--- !u!1 &8242320856473030979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5047223772472415518}
+  - component: {fileID: 8826235135959303250}
+  m_Layer: 31
+  m_Name: New Palette
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5047223772472415518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8242320856473030979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3173859505260895776}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!156049354 &8826235135959303250
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8242320856473030979}
+  m_Enabled: 1
+  m_CellSize: {x: 3, y: 3, z: 0}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
+--- !u!114 &7883377979809825492
+>>>>>>> 86116ff9cb9820d0b3696d234379f38f6b7c5053:Assets/Sprites/TilePallete/New Palette.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
