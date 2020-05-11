@@ -7,7 +7,7 @@ public class Damagable : MonoBehaviour
 {
     [Tooltip("The maximum health this entity can have.")]
     [SerializeField] private int maximumLife;
-    public int MaximumLife { get => maximumLife; set => SetMaximumHealth(value);  }
+    public int MaximumLife { get => maximumLife; set => SetMaximumHealth(value); }
 
     [Tooltip("The initial amount of health this entity should start with.")]
     [SerializeField] private int currentLife;
@@ -63,15 +63,22 @@ public class Damagable : MonoBehaviour
 
     private int GetEffectiveDamage(int damage, Element element)
     {
+        int effective = damage;
         if (element == weakness)
         {
-            return damage * 2;
+            effective = damage * 2;
+            MovingTextManager.Instance.ShowMessage("Super Effective -" + effective, transform.position, Color.red);
         }
-        if (element == resistance)
+        else if (element == resistance)
         {
-            return Math.Max(1, damage / 2);
+            effective = Math.Max(1, damage / 2);
+            MovingTextManager.Instance.ShowMessage("Ineffective -" + effective, transform.position, Color.red);
         }
-        return damage;
+        else
+        {
+            MovingTextManager.Instance.ShowMessage("-" + effective, transform.position, Color.red);
+        }
+        return effective;
     }
 
     /// <summary>Reduces health by the given amount.</summary>

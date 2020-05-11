@@ -96,12 +96,12 @@ PrefabInstance:
     - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: maximumLife
-      value: 6
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: currentLife
-      value: 6
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
@@ -132,7 +132,12 @@ PrefabInstance:
     - target: {fileID: 8282411493121547717, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: damageType
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8282411493121547717, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: damage
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ef9abe98f4196438b3b673eb717bf4, type: 3}

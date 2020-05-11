@@ -29,10 +29,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 882104181211489746, guid: 2792157f2f5539d4f927616669fdad61,
+        type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6172214478714121963, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}
       propertyPath: m_Name
-      value: Fire Wizard Variant
+      value: Fire Wizard
       objectReference: {fileID: 0}
     - target: {fileID: 6172214478714121965, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}
