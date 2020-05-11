@@ -14,7 +14,7 @@ public class VolleyAbility : Ability
         launcher = GetComponent<ProjectileLauncher>();
     }
 
-    protected override void ActivateAbility(Vector2 target)
+    public override void ActivateAbility(Vector2 target)
     {
         StartCoroutine(LaunchOverTime());
     }
