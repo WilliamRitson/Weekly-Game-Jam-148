@@ -11,7 +11,7 @@ public class HealAbility : Ability
         dmg = GetComponent<Damagable>();
     }
 
-    protected override void ActivateAbility(Vector2 target)
+    public override void ActivateAbility(Vector2 target)
     {
         dmg.Heal(healAmount);
     }

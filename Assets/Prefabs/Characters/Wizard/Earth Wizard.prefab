@@ -17,8 +17,81 @@ MonoBehaviour:
   abilityName: Boulder
   boundingProjectile: {fileID: 7470936336945256541, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
     type: 3}
-  bouncingAbilityDuration: 0
   sizeMultiplier: 0
+--- !u!1001 &2378777666505604444
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8789722093864275761}
+    m_Modifications:
+    - target: {fileID: 6609935883924404434, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609935883924404434, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609935883924404434, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609935883924404434, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609935883924404434, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609935883924404434, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609935883924404434, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609935883924404434, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609935883924404434, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609935883924404434, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609935883924404434, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470936336945256541, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_Name
+      value: BouncingProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470936336945256541, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 70eb9a274f6cec54b9afaa59a3a608fd, type: 3}
 --- !u!1001 &3193969066199605724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -147,6 +220,12 @@ PrefabInstance:
 --- !u!1 &8789722093864275767 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6172214478714121963, guid: 2792157f2f5539d4f927616669fdad61,
+    type: 3}
+  m_PrefabInstance: {fileID: 3193969066199605724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8789722093864275761 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6172214478714121965, guid: 2792157f2f5539d4f927616669fdad61,
     type: 3}
   m_PrefabInstance: {fileID: 3193969066199605724}
   m_PrefabAsset: {fileID: 0}

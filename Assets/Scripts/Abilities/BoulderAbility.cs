@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BoulderAbility : Ability
 {
-    [SerializeField] private GameObject boundingProjectile;
-    [SerializeField] private float bouncingAbilityDuration;
+    public GameObject boundingProjectile;
+    //[SerializeField] private float bouncingAbilityDuration;
     [SerializeField] private float sizeMultiplier;
 
     private ProjectileLauncher projectileLauncher;
@@ -15,6 +15,11 @@ public class BoulderAbility : Ability
     {
         projectileLauncher = GetComponent<ProjectileLauncher>();
         initialProjectile2D = projectileLauncher.projectile;
+
+        if (boundingProjectile == null)
+        {
+            boundingProjectile = transform.GetChild(0).gameObject;
+        }
     }
 
     public override bool ShouldUse(GameObject target)
@@ -22,7 +27,7 @@ public class BoulderAbility : Ability
         return true;
     }
 
-    protected override void ActivateAbility(Vector2 target)
+    public override void ActivateAbility(Vector2 target)
     {
         projectileLauncher.projectile = boundingProjectile;
         projectileLauncher.LaunchInDirection(target - (Vector2)transform.position, 3, 15, 4);

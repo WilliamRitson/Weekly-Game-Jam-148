@@ -38,7 +38,7 @@ public abstract class Ability : Controllable, IDisplayAbility
 
     public abstract bool ShouldUse(GameObject target);
 
-    protected abstract void ActivateAbility(Vector2 target);
+    public abstract void ActivateAbility(Vector2 target);
 
     protected override void AddController(Controller controller)
     {

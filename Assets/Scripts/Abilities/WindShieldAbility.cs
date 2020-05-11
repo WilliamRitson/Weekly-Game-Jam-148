@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class WindShieldAbility : Ability
 {
-   [SerializeField] private float abilityDuration;
-   [SerializeField] private ProjectileSquander projectileSquander;
+    public float abilityDuration;
+    public ProjectileSquander projectileSquander;
+
+    private void Start()
+    {
+        if (projectileSquander == null)
+        {
+            projectileSquander = transform.GetChild(0).GetComponent<ProjectileSquander>();
+        }
+    }
 
     public override bool ShouldUse(GameObject target)
     {
         return true;
     }
 
-    protected override void ActivateAbility(Vector2 target)
+    public override void ActivateAbility(Vector2 target)
     {
         StartCoroutine(DeactivateAbility());
     }
