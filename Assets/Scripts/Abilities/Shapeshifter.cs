@@ -22,7 +22,7 @@ public class Shapeshifter : Ability
 
     private void Start()
     {
-        if (!TryGetComponent(out kingAbility))
+        if (!TryGetComponent(out kingAbility))// if it's not king
         {
             gameObject.tag = "Player";
             var playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerUI>();
