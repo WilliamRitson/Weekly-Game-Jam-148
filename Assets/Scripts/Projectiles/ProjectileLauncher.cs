@@ -48,11 +48,7 @@ public class ProjectileLauncher : Controllable
         {
             shot.GetComponent<Temporary>().lifespan = lifetimeModifier;
         }
-        if (damageModifier != -1)
-        {
-            shot.GetComponent<Projectile2D>().damage += damageModifier;
-
-        }
+       
         Projectile2D proj = shot.GetComponent<Projectile2D>();
 
         if (gameObject.CompareTag("Player"))
@@ -66,6 +62,10 @@ public class ProjectileLauncher : Controllable
 
         proj.projectileVelocity = projectileVelocity;
         proj.damage = damage;
+        if (damageModifier != -1)
+        {
+            shot.GetComponent<Projectile2D>().damage += damageModifier;
+        }
         proj.damageType = damageType;
         timeSinceLastShot = 0.0f;
     }

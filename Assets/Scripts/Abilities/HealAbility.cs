@@ -13,11 +13,11 @@ public class HealAbility : Ability
 
     protected override void ActivateAbility(Vector2 target)
     {
-        dmg.SetHealth(dmg.CurrentLife + healAmount);
+        dmg.Heal(healAmount);
     }
 
     public override bool ShouldUse(GameObject target)
     {
-        return (dmg.MaximumLife - dmg.CurrentLife) <= healAmount;
+        return (dmg.MaximumLife - dmg.CurrentLife) >= healAmount;
     }
 }

@@ -93,4 +93,11 @@ public class Damagable : MonoBehaviour
         }
         return resultantDamage;
     }
+
+    public int Heal(int healAmount)
+    {
+        int healed = SetHealth(currentLife + healAmount);
+        MovingTextManager.Instance.ShowMessage("+" + healed, transform.position, Color.green);
+        return healed;
+    }
 }
