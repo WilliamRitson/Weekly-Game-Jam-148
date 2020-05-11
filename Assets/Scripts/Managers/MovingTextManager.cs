@@ -30,6 +30,10 @@ public class MovingTextManager : MonoBehaviour
     public float fadeTime = 1.25f;
     public void ShowMessage(string msg, Vector2 location, Color color)
     {
+        location = new Vector2(
+            location.x + Random.Range(-0.5f, 0.5f),
+            location.y + Random.Range(-0.5f, 0.5f)
+        );
         MovingText movingText = Instantiate(movingTextPrefab, location, Quaternion.identity).GetComponent<MovingText>();
         movingText.Initilize(msg, textSpeed, new Vector2(Random.Range(-0.2f, 0.2f), 1.0f), color, fadeTime);
     }
