@@ -15,7 +15,7 @@ public class EnemyAI : Controller
 
     public float repathTime = 0.5f;
 
-    private float lastSawPlayer = Mathf.Infinity; 
+    private float lastSawPlayer = Mathf.Infinity;
     private float squaredMaxEngagmentDist;
     private Ability ability;
 
@@ -24,7 +24,8 @@ public class EnemyAI : Controller
     private Vector3 lastPathPos;
     private Seeker seeker;
     private Path path;
-    
+    private bool engagedPlayer = false;
+
     int currentWaypoint = 0;
 
     private void Start()
@@ -53,6 +54,7 @@ public class EnemyAI : Controller
         if (CanSeePlayer(playerPos))
         {
             lastSawPlayer = 0;
+            SetEngagmentState(true);
         }
         else
         {
@@ -62,6 +64,7 @@ public class EnemyAI : Controller
         if (lastSawPlayer > rememberPlayerTime)
         {
             goalPos = originPos;
+            SetEngagmentState(false);
             return;
         }
 
@@ -74,12 +77,34 @@ public class EnemyAI : Controller
         }
     }
 
-    IEnumerator Repath ()
+    private static readonly string[] sawPlayerShouts = new string[] {
+        "Intruder!", "Get them!", "Stop!", "You’re not supposed to be here!", "Surrender!", "Die invader!" };
+
+    private static readonly string[] lostPlayerShouts = new string[] {
+        "Where did they go?", "The intruder escaped.", "I will catch you eventually.", "You can’t hide forever."  };
+
+    void SetEngagmentState(bool isEngaged)
+    {
+        if (engagedPlayer != isEngaged)
+        {
+            Shout(isEngaged ? sawPlayerShouts : lostPlayerShouts);
+        }
+        engagedPlayer = isEngaged;
+    }
+
+    void Shout(string[] variations)
+    {
+        string message = variations[Random.Range(0, variations.Length - 1)];
+        MovingTextManager.Instance.ShowMessage(message, transform.position, Color.white);
+    }
+
+    IEnumerator Repath()
     {
         while (enabled)
         {
             yield return new WaitForSeconds(repathTime);
-            if (goalPos != lastPathPos) {
+            if (goalPos != lastPathPos)
+            {
                 lastPathPos = goalPos;
                 seeker.StartPath(transform.position, goalPos, OnPathFound);
             }
