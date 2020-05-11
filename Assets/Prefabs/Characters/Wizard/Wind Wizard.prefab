@@ -74,6 +74,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 10
+  icon: {fileID: 21300000, guid: ee2a6f285764eaf41b207f8a634cf14b, type: 3}
+  abilityName: Shielding Gale
   abilityDuration: 3
   projectileSquander: {fileID: 2087483368638540919}
 --- !u!1001 &6703665644109956876

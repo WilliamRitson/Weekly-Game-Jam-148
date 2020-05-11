@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 10
+  icon: {fileID: 21300000, guid: 3f5259e152034c74687898f9da0ca5a4, type: 3}
+  abilityName: Boulder
   boundingProjectile: {fileID: 7470936336945256541, guid: 70eb9a274f6cec54b9afaa59a3a608fd,
     type: 3}
   bouncingAbilityDuration: 0

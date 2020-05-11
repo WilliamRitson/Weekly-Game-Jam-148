@@ -12,7 +12,6 @@ public class Projectile2D : MonoBehaviour
 
     protected void Start()
     {
-        print("Called in Main");
         isAffetedBySquander = false;
         rig = GetComponent<Rigidbody2D>();
     }

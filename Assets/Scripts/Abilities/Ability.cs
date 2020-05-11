@@ -1,22 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
-public abstract class Ability : Controllable
+public abstract class Ability : Controllable, IDisplayAbility
 {
     public float cooldownTime = 10.0f;
     private bool onCooldown = false;
     protected float lastUsed = Mathf.Infinity;
 
+    public event Action<float> OnCooldown;
+    [SerializeField] protected Sprite icon;
+    public Sprite Icon { get => icon; }
+    [SerializeField] protected string abilityName;
+    public string Name { get => abilityName; }
+
+
     protected virtual void Trigger(Vector2 target)
     {
         if (onCooldown) return;
+        StartCooldown();
+        ActivateAbility(target);
+    }
+    
+    protected void StartCooldown()
+    {
         onCooldown = true;
         StartCoroutine(Cooldown());
-        ActivateAbility(target);
     }
 
     private IEnumerator Cooldown()
     {
+        OnCooldown?.Invoke(cooldownTime);
         yield return new WaitForSeconds(cooldownTime);
         onCooldown = false;
     }
