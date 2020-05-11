@@ -1134,6 +1134,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3246324628976142409, guid: 84b8db11e4f92394787d76e7196dd0bb,
+        type: 3}
+      propertyPath: abilityName
+      value: Shapeshift
+      objectReference: {fileID: 0}
     - target: {fileID: 8022636059321526027, guid: 84b8db11e4f92394787d76e7196dd0bb,
         type: 3}
       propertyPath: m_Name

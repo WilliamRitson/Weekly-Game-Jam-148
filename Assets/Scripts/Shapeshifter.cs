@@ -9,13 +9,20 @@ public class Shapeshifter : Ability
     public float speedBonus = 1.0f;
     public float projectileCooldownMultiplier = 0.8f;
     public int lifeBonus = 2;
+    private bool justShifted = false;
 
 
     private void Start()
     {
         gameObject.tag = "Player";
         var playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerUI>();
-        playerUI.AttachTo(this, GetComponents<Ability>().FirstOrDefault(abilty => abilty != this));
+        var dmg = GetComponent<Damagable>();
+        Debug.Log(dmg);
+        playerUI.AttachTo(this, GetComponents<Ability>().FirstOrDefault(abilty => abilty != this), dmg);
+        if (justShifted)
+        {
+            StartCooldown();
+        }
     }
 
     protected override void ActivateAbility(Vector2 target)
@@ -39,6 +46,7 @@ public class Shapeshifter : Ability
         shift.speedBonus = speedBonus;
         shift.projectileCooldownMultiplier = projectileCooldownMultiplier;
         shift.lifeBonus = lifeBonus;
+        shift.justShifted = true;
         newForm.AddComponent<CameraCenter>();
         newForm.AddComponent<PlayerController>();
         newForm.GetComponent<Mover>().initialSpeed += speedBonus;
@@ -46,18 +54,17 @@ public class Shapeshifter : Ability
         var health = newForm.GetComponent<Damagable>();
         health.MaximumLife += lifeBonus;
         health.CurrentLife = health.MaximumLife;
-        shift.StartCooldown();
         Destroy(gameObject);
     }
 
     protected override void AddController(Controller controller)
     {
-        controller.OnShapeshift += ActivateAbility;
+        controller.OnShapeshift += Trigger;
     }
 
     protected override void RemoveController(Controller controller)
     {
-        controller.OnShapeshift -= ActivateAbility;
+        controller.OnShapeshift -= Trigger;
     }
 
     public override bool ShouldUse(GameObject target)

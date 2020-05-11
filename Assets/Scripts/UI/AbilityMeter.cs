@@ -10,6 +10,7 @@ public class AbilityMeter : MonoBehaviour
     public IDisplayAbility Ability { get => ability; set => SetAbility(value); }
 
     [SerializeField] private Image imageDisplay;
+    [SerializeField] private Image fill;
     [SerializeField] private Text tooltip;
     public string key;
     private float cooldownTime;
@@ -21,6 +22,7 @@ public class AbilityMeter : MonoBehaviour
         {
             ability.OnCooldown -= StartCooldown;
         }
+        cooldownTime = 0;
 
         ability = newAbility;
         if (newAbility == null)
@@ -49,6 +51,12 @@ public class AbilityMeter : MonoBehaviour
 
     private void Update()
     {
+        if (cooldownTime <= 0)
+        {
+            fill.fillAmount = 0;
+            return;
+        }
         cooldownTime -= Time.deltaTime;
+        fill.fillAmount = cooldownTime / cooldownTimeTotal;
     }
 }
