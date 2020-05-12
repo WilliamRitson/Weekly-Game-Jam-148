@@ -28,7 +28,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: e7f3e177844b92143ae019f2dcad1a0d, type: 3}
   abilityName: Shapeshift
   speedBonus: 1
-  projectileCooldownMultiplier: 0.8
+  projectileCooldownMultiplier: 0.75
   lifeBonus: 2
 --- !u!114 &5332964687911624449
 MonoBehaviour:
