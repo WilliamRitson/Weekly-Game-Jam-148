@@ -51,9 +51,13 @@ public class EnemyAI : Controller
         }
 
         Vector3 playerPos = player.transform.position;
+
+        focusPoint = playerPos;
+
         if (CanSeePlayer(playerPos))
         {
             lastSawPlayer = 0;
+            
             SetEngagmentState(true);
         }
         else

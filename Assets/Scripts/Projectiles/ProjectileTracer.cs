@@ -23,7 +23,13 @@ public class ProjectileTracer : MonoBehaviour
         creatTime = Time.time;
         Projectile2DRig = Projectile2D.GetComponent<Rigidbody2D>();
         projectileOldVelocity = Projectile2DRig.velocity;
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerTransform = player.transform;
+        }
+        
 
         if (Projectile2D.isTargetingPlayer)
         {

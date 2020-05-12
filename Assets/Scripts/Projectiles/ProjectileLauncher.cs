@@ -5,6 +5,10 @@ using System.Collections.Generic;
 
 public class ProjectileLauncher : Controllable
 {
+    
+
+    private Transform projectileCreatPosition;
+
     public float projectileVelocity = 6f;
     public float timeBetweenShots = 0.2f;
     public GameObject projectile;
@@ -44,8 +48,8 @@ public class ProjectileLauncher : Controllable
 
     public void LaunchInDirection(Vector2 target, float sizeMultilpier = 1, float lifetimeModifier = -1, int damageModifier = -1)
     {
-        GameObject shot = Instantiate(projectile, transform.position, transform.rotation);
-
+        GameObject shot = Instantiate(projectile, transform.position, projectile.transform.rotation);
+        shot.transform.position = projectileCreatPosition.position;
         float x = shot.transform.position.x;
         float y = shot.transform.position.y;
 
@@ -101,8 +105,9 @@ public class ProjectileLauncher : Controllable
         controller.OnLaunchProjectile -= LaunchIfAvalible;
     }
 
-    public void Shoot()//this function will be called from the AnimationManager
+    public void Shoot(Transform projectileCreatPos)//this function will be called from the AnimationManager
     {
+        projectileCreatPosition = projectileCreatPos;
         LaunchInDirection(target);
     }
 }

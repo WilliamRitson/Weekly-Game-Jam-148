@@ -4,33 +4,64 @@ using UnityEngine;
 
 public class Looker : Controllable
 {
+    [SerializeField] private float saveRange;//the range where can the mouse move without changing the character direction
+
     private Animator animator;
-    private Controller controller;
+    private Rigidbody2D rig;
+
+
     private void Start()
     {
+        rig = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        if (gameObject.CompareTag("Enemy"))
+        {
+            saveRange = 1;
+        }
     }
 
     private void Update()
     {
+        animator.SetFloat("xVelocity", rig.velocity.x);
+        animator.SetFloat("yVelocity", rig.velocity.y);
+
+        if (rig.velocity != Vector2.zero)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
         if (controller == null) return;
         var lookVector = controller.focusPoint - (Vector2)transform.position;
-        var angle = Vector2.Angle(Vector2.one, lookVector);
         AnimationDirection facing;
-        Debug.Log(lookVector);
-        if (angle > -45 && angle <= 45)
+
+        //print(lookVector);
+
+        if ((lookVector.x >= 0 && lookVector.y >= 0 && lookVector.x <= saveRange) || (lookVector.x < 0 && lookVector.y >= 0 && lookVector.x >= -saveRange))
+        {
+            facing = AnimationDirection.Backward;
+        }
+        else if ((lookVector.x >= 0 && lookVector.y >= 0 && lookVector.x >= saveRange) || (lookVector.x >= 0 && lookVector.y < 0 && lookVector.x >= saveRange))
         {
             facing = AnimationDirection.Right;
         }
-        else if (angle > 45 && angle <= 135)
+        else if ((lookVector.x >= 0 && lookVector.y < 0 && lookVector.x <= saveRange) || (lookVector.x < 0 && lookVector.y < 0 && lookVector.x >= -saveRange))
         {
-            facing = AnimationDirection.Backward;
+            facing = AnimationDirection.Forward;
+        }
+        else if ((lookVector.x < 0 && lookVector.y > 0 && lookVector.x <= -saveRange) || (lookVector.x < 0 && lookVector.y < 0 && lookVector.x <= -saveRange))
+        {
+            facing = AnimationDirection.Left;
         }
         else
         {
             facing = AnimationDirection.Forward;
         }
-        animator.SetInteger("Facing", (int) facing);
+        animator.SetInteger("Facing", (int)facing);
     }
 
     protected override void AddController(Controller controller)
