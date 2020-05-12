@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &675480516
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8022636059321526027}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6baf55758ed61d840855d763852328f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &-3224127766581668768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,7 +47,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: e7f3e177844b92143ae019f2dcad1a0d, type: 3}
   abilityName: Shapeshift
   speedBonus: 1
-  projectileCooldownMultiplier: 0.8
+  projectileCooldownMultiplier: 0.75
   lifeBonus: 2
 --- !u!114 &5332964687911624449
 MonoBehaviour:
@@ -68,7 +87,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1568729914967194725, guid: 5bc2826808f63264188cee78df9e3349,
+      objectReference: {fileID: -5647608382358551812, guid: 89cfc07ac0ea40049adc03be7a710c03,
         type: 3}
     - target: {fileID: 3126844044251436792, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
@@ -85,15 +104,25 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436792, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436792, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.22
+      objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.185
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.316
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
@@ -143,17 +172,17 @@ PrefabInstance:
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436796, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
@@ -168,17 +197,17 @@ PrefabInstance:
     - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: maximumLife
-      value: 100
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: currentLife
-      value: 100
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 7993249566926608189, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_Radius
-      value: 0.09
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8282411493121547717, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}

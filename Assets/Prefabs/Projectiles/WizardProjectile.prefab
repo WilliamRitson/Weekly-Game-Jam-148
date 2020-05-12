@@ -55,14 +55,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991813273544233124}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f76ee62c8ef5f64eb4581eb50d231f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   Projectile2D: {fileID: 2476219766543572348}
-  secToDestroy: 3
   trackingDuration: 0.5
 --- !u!1 &7470936336945256541
 GameObject:
@@ -95,7 +94,7 @@ Transform:
   m_GameObject: {fileID: 7470936336945256541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8062762875457851691}
   m_Father: {fileID: 0}
@@ -140,8 +139,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 25c5e49a851704c4db40384accae0c2f, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 5353841184698615464, guid: dc074b2079bc52841aeb7cb986db5558,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -188,6 +188,7 @@ MonoBehaviour:
   projectileVelocity: 0
   damage: 1
   damageType: 0
+  isAffetedBySquander: 0
 --- !u!58 &7933732613927211527
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -201,9 +202,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1099943}
   serializedVersion: 2
-  m_Radius: 0.16666667
+  m_Radius: 0.19732083
 --- !u!114 &-4992385820376511645
 MonoBehaviour:
   m_ObjectHideFlags: 0
