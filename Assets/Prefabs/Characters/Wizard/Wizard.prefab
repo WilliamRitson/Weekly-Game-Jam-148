@@ -117,17 +117,17 @@ PrefabInstance:
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436795, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
@@ -158,6 +158,11 @@ PrefabInstance:
         type: 3}
       propertyPath: resistance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993249566926608189, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8282411493121547717, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Throne Area.unity
+    guid: 0fe8bde1357ded9429ce4922211ffd37
+  - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: 0796398e0fff9fe4cbc31855e44bd632
   - enabled: 1
