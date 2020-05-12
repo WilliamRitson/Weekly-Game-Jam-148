@@ -28,27 +28,6 @@ public class Looker : Controllable
 
         if (rig.velocity != Vector2.zero)
         {
-            //if (rig.velocity.x > 0)
-            //{
-            //    animator.SetBool("isLeft", false);
-            //    animator.SetBool("isRight", true);
-            //}
-            //else if (rig.velocity.x <= 0)
-            //{
-            //    animator.SetBool("isRight", false);
-            //    animator.SetBool("isLeft", true);
-            //}
-            //else if (rig.velocity.y > 0)
-            //{
-            //    animator.SetBool("isForward", false);
-            //    animator.SetBool("isBackward", true);
-            //}
-            //else if (rig.velocity.y <= 0)
-            //{
-            //    animator.SetBool("isBackward", false);
-            //    animator.SetBool("isForward", true);
-            //}
-
             animator.SetBool("isWalking", true);
         }
         else
