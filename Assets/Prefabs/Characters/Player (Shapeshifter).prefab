@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDirection: {x: 0, y: 0}
+  focusPoint: {x: 0, y: 0}
 --- !u!114 &7555550420536402977
 MonoBehaviour:
   m_ObjectHideFlags: 0

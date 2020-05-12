@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4628070239329510858}
   - component: {fileID: 5205183146902971212}
   - component: {fileID: -1366688981393017207}
+  - component: {fileID: 8268134916471085141}
   m_Layer: 0
   m_Name: Entity
   m_TagString: Enemy
@@ -200,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDirection: {x: 0, y: 0}
+  focusPoint: {x: 0, y: 0}
   moveSpeed: 5
   maxEngagmentDist: 15
   rememberPlayerTime: 10
@@ -232,3 +234,15 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &8268134916471085141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126844044251436796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8224f9b40add6b40a117309ba1dd71d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

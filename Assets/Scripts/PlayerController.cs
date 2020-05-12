@@ -24,21 +24,19 @@ public class PlayerController : Controller
 
     private void Shapeshift()
     {
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        mousePos = playerCamera.ScreenToWorldPoint(mousePos);
-        TriggerShapeshift(mousePos);
+        TriggerShapeshift(focusPoint);
     }
 
     private void Ability()
     {
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        mousePos = playerCamera.ScreenToWorldPoint(mousePos);
-        TriggerAbility(mousePos);
+        TriggerAbility(focusPoint);
     }
 
     void Update()
     {
+        Vector2 mousePos = Mouse.current.position.ReadValue();
         movementDirection = controls.Gameplay.Move.ReadValue<Vector2>();
+        focusPoint = playerCamera.ScreenToWorldPoint(mousePos);
     }
 
     void OnEnable()
