@@ -24,7 +24,7 @@ public class ColoredProjectile : MonoBehaviour
             case Element.Fire:
                 return Color.red;
             case Element.Water:
-                return Color.red;
+                return Color.blue;
             case Element.Wind:
                 return Color.cyan;
         }
