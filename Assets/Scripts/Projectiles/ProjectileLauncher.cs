@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
 
 public class ProjectileLauncher : Controllable
 {
@@ -10,9 +13,14 @@ public class ProjectileLauncher : Controllable
 
     private Collider2D launcherCollider;
     private float timeSinceLastShot = 10.0f;
+    private Animator animator;
+    private AnimationManager animationManager;
+    private Vector2 target;
 
     private void Awake()
     {
+        animationManager = GetComponent<AnimationManager>();
+        animator = GetComponent<Animator>();
         launcherCollider = GetComponent<Collider2D>();
     }
 
@@ -24,17 +32,20 @@ public class ProjectileLauncher : Controllable
     void LaunchIfAvalible(Vector2 target)
     {
         if (timeSinceLastShot <= timeBetweenShots) return;
+        timeSinceLastShot = 0.0f;
         LaunchAtPosition(target);
     }
 
     public void LaunchAtPosition(Vector2 target)
     {
-        LaunchInDirection(target - (Vector2)transform.position);
+        this.target = target - (Vector2)transform.position;
+        animationManager.StartShootingAnimation();
     }
 
     public void LaunchInDirection(Vector2 dir, float sizeMultilpier = 1, float lifetimeModifier = -1, int damageModifier = -1)
     {
         GameObject shot = Instantiate(projectile, transform.position, transform.rotation);
+        //print(launcherCollider + " " + gameObject.name);
         if (launcherCollider)
         {
             Physics2D.IgnoreCollision(launcherCollider, shot.GetComponent<Collider2D>());
@@ -67,7 +78,7 @@ public class ProjectileLauncher : Controllable
             shot.GetComponent<Projectile2D>().damage += damageModifier;
         }
         proj.damageType = damageType;
-        timeSinceLastShot = 0.0f;
+        
     }
 
     protected override void AddController(Controller controller)
@@ -78,5 +89,10 @@ public class ProjectileLauncher : Controllable
     protected override void RemoveController(Controller controller)
     {
         controller.OnLaunchProjectile -= LaunchIfAvalible;
+    }
+
+    public void Shoot()//this function will be called from the AnimationManager
+    {
+        LaunchInDirection(target);
     }
 }

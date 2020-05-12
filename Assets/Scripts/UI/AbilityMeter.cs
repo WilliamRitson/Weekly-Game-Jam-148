@@ -41,7 +41,10 @@ public class AbilityMeter : MonoBehaviour
 
     private void OnDestroy()
     {
-        ability.OnCooldown -= StartCooldown;
+        if (ability != null)
+        {
+            ability.OnCooldown -= StartCooldown;
+        }
     }
 
     private void StartCooldown(float time)
