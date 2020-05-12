@@ -87,7 +87,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1568729914967194725, guid: 5bc2826808f63264188cee78df9e3349,
+      objectReference: {fileID: -5647608382358551812, guid: 89cfc07ac0ea40049adc03be7a710c03,
         type: 3}
     - target: {fileID: 3126844044251436792, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
@@ -103,6 +103,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436792, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436792, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
@@ -162,17 +172,17 @@ PrefabInstance:
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436794, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3126844044251436796, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
@@ -197,7 +207,7 @@ PrefabInstance:
     - target: {fileID: 7993249566926608189, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: m_Radius
-      value: 0.09
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8282411493121547717, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}

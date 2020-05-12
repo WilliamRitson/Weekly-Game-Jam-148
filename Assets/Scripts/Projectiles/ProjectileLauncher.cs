@@ -51,6 +51,7 @@ public class ProjectileLauncher : Controllable
             Physics2D.IgnoreCollision(launcherCollider, shot.GetComponent<Collider2D>());
         }
         shot.GetComponent<Rigidbody2D>().velocity = dir.normalized * projectileVelocity;
+        // shot.transform.rotation = Quaternion.LookRotation(dir, Vector3.forward);
         if (sizeMultilpier != 1)
         {
             shot.transform.localScale *= sizeMultilpier;
