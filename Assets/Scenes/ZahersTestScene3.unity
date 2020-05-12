@@ -1198,26 +1198,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2090001040113050547, guid: 84b8db11e4f92394787d76e7196dd0bb,
-        type: 3}
-      propertyPath: maximumLife
-      value: 100000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2090001040113050547, guid: 84b8db11e4f92394787d76e7196dd0bb,
-        type: 3}
-      propertyPath: currentLife
-      value: 100000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3246324628976142409, guid: 84b8db11e4f92394787d76e7196dd0bb,
-        type: 3}
-      propertyPath: abilityName
-      value: Shapeshift
-      objectReference: {fileID: 0}
-    - target: {fileID: 3246324628976142409, guid: 84b8db11e4f92394787d76e7196dd0bb,
-        type: 3}
-      propertyPath: lifeBonus
-      value: 10100
-      objectReference: {fileID: 0}
     - target: {fileID: 8022636059321526027, guid: 84b8db11e4f92394787d76e7196dd0bb,
         type: 3}
       propertyPath: m_Name
@@ -1866,6 +1846,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 994953223662035973, guid: b9791dd5400eb204fa4463a3e65c726f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8789722093864275761, guid: b9791dd5400eb204fa4463a3e65c726f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4628,6 +4613,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: King
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904316433789764496, guid: 938958b19c775f941b63b9726f89af3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6904316433789764502, guid: 938958b19c775f941b63b9726f89af3c,
         type: 3}
