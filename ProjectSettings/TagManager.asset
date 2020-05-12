@@ -48,3 +48,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Characters
+    uniqueID: 699864967
+    locked: 0
+  - name: Collided
+    uniqueID: 990099867
+    locked: 0
