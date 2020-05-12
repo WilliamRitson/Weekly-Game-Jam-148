@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum AnimationDirection
+{
+    Forward = 0,
+    Backward = 1,
+    Right = 2,
+    Left = 3
+}
 public class AnimationManager : MonoBehaviour
 {
     private Animator animator;
