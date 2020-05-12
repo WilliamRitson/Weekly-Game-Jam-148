@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5177677748418040353}
   - component: {fileID: -4992385820376511645}
   - component: {fileID: 5292798285784325024}
+  - component: {fileID: 6606941431255628253}
   m_Layer: 0
   m_Name: BouncingProjectile
   m_TagString: Projectile
@@ -169,3 +170,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifespan: 50
+--- !u!95 &6606941431255628253
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470936336945256541}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abfff5089fc89ff4196cc228e4ac5b16, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

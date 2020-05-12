@@ -47,17 +47,17 @@ public class ProjectileTracer : MonoBehaviour
 
             x = x - target.position.x;
             y = y - target.position.y;
-            angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
-            Projectile2D.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-            Projectile2D.transform.Rotate(new Vector3(0, 0, 180));
-            Projectile2D.transform.position += Projectile2D.transform.right * Projectile2D.projectileVelocity * Time.deltaTime;
+            angle = Mathf.Atan2(x, y) * Mathf.Rad2Deg;
+            Projectile2D.transform.rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
+            //Projectile2D.transform.Rotate(new Vector3(0, 0, 180));
+            Projectile2D.transform.position += -1*Projectile2D.transform.up * Projectile2D.projectileVelocity * Time.deltaTime;
         }
     }
     private void FixedUpdate()
     {
         if (Time.time - Time.deltaTime - creatTime >= trackingDuration && !Projectile2D.isAffetedBySquander)
         {
-            Projectile2DRig.velocity = Projectile2D.transform.right * Projectile2D.projectileVelocity;
+            Projectile2DRig.velocity = -1*Projectile2D.transform.up * Projectile2D.projectileVelocity;
         }
     }
 
