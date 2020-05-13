@@ -8,7 +8,6 @@ public class BoulderAbility : Ability
     //[SerializeField] private float bouncingAbilityDuration;
     [SerializeField] private float sizeMultiplier;
 
-    private ProjectileLauncher projectileLauncher;
     private GameObject initialProjectile2D;
 
     private void Start()
@@ -30,8 +29,7 @@ public class BoulderAbility : Ability
     public override void ActivateAbility(Vector2 target)
     {
         projectileLauncher.projectile = boundingProjectile;
-        projectileLauncher.LaunchAtPosition(target - (Vector2)transform.position, 3, 15, 4);
-        projectileLauncher.projectile = initialProjectile2D;
+        projectileLauncher.LaunchAtPosition(target, 3, 15, 4);
     }
 
 }

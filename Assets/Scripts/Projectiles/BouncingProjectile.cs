@@ -11,12 +11,14 @@ public class BouncingProjectile : Projectile2D
 
 
     private float currentHealth;
+    private Vector2 startVelocity;
 
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
         currentHealth = initialHealth;
+        startVelocity = rig.velocity;
     }
 
     private void Update()
@@ -37,19 +39,24 @@ public class BouncingProjectile : Projectile2D
             currentHealth -= targetHealthAffectNum;
             if (currentHealth > 0)
             {
-                rig.velocity *= -1;//let the projectile go the opposit side which came from
+                rig.velocity = -1 * startVelocity;//let the projectile go the opposit side which came from
             }
         }
         else if (collision.gameObject.CompareTag("Projectile"))
         {
             currentHealth -= projectileHealthAffectNum;
         }
+        else if (collision.gameObject.CompareTag("BouncingProjectile"))
+        {
+            Destroy(gameObject);
+        }
         else if (collision.gameObject.CompareTag("Wall"))
         {
+            print("Wall");
             currentHealth -= wallHealthAffectNum;
             if (currentHealth > 0)
             {
-                rig.velocity *= -1;//let the projectile go the opposit side which came from
+                rig.velocity = -1 * startVelocity;//let the projectile go the opposit side which came from
             }
         }
 

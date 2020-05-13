@@ -17,7 +17,7 @@ public class ProjectileSquander : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Projectile"))
+        if (collision.CompareTag("Projectile") || collision.CompareTag("BouncingProjectile"))
         {
             Projectile2D projectile2D = collision.GetComponent<Projectile2D>();
             if (projectile2D.isTargetingPlayer && parent.CompareTag("Player"))

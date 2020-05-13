@@ -163,6 +163,8 @@ MonoBehaviour:
     type: 3}
   damage: 2
   damageType: 0
+  wizardProjectile: {fileID: 7470936336945256541, guid: 1a95904930f3e0b46a162cbbe0115bdc,
+    type: 3}
 --- !u!114 &6427696827174015556
 MonoBehaviour:
   m_ObjectHideFlags: 0

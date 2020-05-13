@@ -22,7 +22,11 @@ public class Projectile2D : MonoBehaviour
         if (damagable) {
             damagable.TakeDamage(damage, damageType);
         }
-        Destroy(gameObject);
+
+        if (!col.gameObject.CompareTag("Projectile"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void GetAffectedBySquander()//let the pullet go away from the target when it affected by the suander (Wind Sheild ability)

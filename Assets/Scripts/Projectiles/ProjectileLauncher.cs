@@ -11,11 +11,18 @@ public class ProjectileLauncher : Controllable
     public int damage = 1;
     public Element damageType;
 
+    [SerializeField] private GameObject wizardProjectile;
     private Collider2D launcherCollider;
     private float timeSinceLastShot = 10.0f;
     private Animator animator;
     private AnimationManager animationManager;
     private Vector2 target;
+    private float sizeMultilpier = 1;
+    private float lifetimeModifier = -1;
+    private int damageModifier = -1;
+
+
+
 
     private void Awake()
     {
@@ -39,10 +46,13 @@ public class ProjectileLauncher : Controllable
     public void LaunchAtPosition(Vector2 target, float sizeMultilpier = 1, float lifetimeModifier = -1, int damageModifier = -1)
     {
         this.target = target;
+        this.sizeMultilpier = sizeMultilpier;
+        this.lifetimeModifier = lifetimeModifier;
+        this.damageModifier = damageModifier;
         animationManager.StartShootingAnimation();
     }
 
-    public void LaunchInDirection(Vector2 target, float sizeMultilpier = 1, float lifetimeModifier = -1, int damageModifier = -1)
+    public void LaunchInDirection(Vector2 target)
     {
         GameObject shot = Instantiate(projectile, transform.position, projectile.transform.rotation);
         float x = shot.transform.position.x;
@@ -87,7 +97,8 @@ public class ProjectileLauncher : Controllable
             shot.GetComponent<Projectile2D>().damage += damageModifier;
         }
         proj.damageType = damageType;
-        
+
+        projectile = wizardProjectile;
     }
 
     protected override void AddController(Controller controller)
