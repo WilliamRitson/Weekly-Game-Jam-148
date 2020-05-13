@@ -946,6 +946,26 @@ PrefabInstance:
       propertyPath: soundInfo.enemyAlertClip
       value: 
       objectReference: {fileID: 8300000, guid: e367f3acb3bc15f419a82865229da4f3, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.rockSpellClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c4e1b80ed7299c74e9ce4a09832c23be, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.waterSpellClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a742ce8703dbd6c459b33d0e5a4b5b9f, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.waterSpellVolume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.rockSpellVolume
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 866787154801166770, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
         type: 3}
       propertyPath: m_Name

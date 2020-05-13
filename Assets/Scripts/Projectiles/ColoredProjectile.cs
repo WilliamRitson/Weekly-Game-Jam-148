@@ -20,11 +20,13 @@ public class ColoredProjectile : MonoBehaviour
         switch (element)
         {
             case Element.Earth:
+                AudioManager.SharedInstance().PlayRockSpellAudio();
                 return brown;
             case Element.Fire:
                 AudioManager.SharedInstance().PlayFlameSpellAudio();
                 return Color.red;
             case Element.Water:
+                AudioManager.SharedInstance().PlayWaterSpellAudio();
                 return Color.blue;
             case Element.Wind:
                 return Color.cyan;

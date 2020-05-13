@@ -45,6 +45,12 @@ public class AudioManager : MonoBehaviour
         public AudioClip flameSpellClip;
         public float flameSpellVolume;
 
+        public AudioClip rockSpellClip;
+        public float rockSpellVolume;
+
+        public AudioClip waterSpellClip;
+        public float waterSpellVolume;
+
         public AudioClip enemyAlertClip;
         public float enemyAlertVolume;
 
@@ -158,7 +164,26 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+    public void PlayRockSpellAudio()
+    {
 
+        {
+            if (!IsSoundsMuted)
+            {
+                audioSourceSounds.PlayOneShot(soundInfo.rockSpellClip, soundInfo.rockSpellVolume);
+            }
+        }
+    }
+    public void PlayWaterSpellAudio()
+    {
+
+        {
+            if (!IsSoundsMuted)
+            {
+                audioSourceSounds.PlayOneShot(soundInfo.waterSpellClip, soundInfo.waterSpellVolume);
+            }
+        }
+    }
     public void PlayFlameSpellAudio()
     {
         if (!IsSoundsMuted)
