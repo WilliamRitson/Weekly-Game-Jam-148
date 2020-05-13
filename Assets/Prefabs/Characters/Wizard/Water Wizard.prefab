@@ -28,6 +28,18 @@ PrefabInstance:
       propertyPath: damageType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 882104181211489746, guid: 2792157f2f5539d4f927616669fdad61,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 317268778779518894, guid: 3521568d521255a48a42db3e6af2fe84,
+        type: 3}
+    - target: {fileID: 882104181211489746, guid: 2792157f2f5539d4f927616669fdad61,
+        type: 3}
+      propertyPath: wizardProjectile
+      value: 
+      objectReference: {fileID: 317268778779518894, guid: 3521568d521255a48a42db3e6af2fe84,
+        type: 3}
     - target: {fileID: 2882040427668367955, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}
       propertyPath: weakness
@@ -101,18 +113,24 @@ PrefabInstance:
     - target: {fileID: 6172214478714121967, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.12629052
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6172214478714121967, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.35293418
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6172214478714121967, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.8113208
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6868373250184363470, guid: 2792157f2f5539d4f927616669fdad61,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: ecc4d800c01db1645bccad9aeba6a73d,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 5042322418128439364, guid: 2792157f2f5539d4f927616669fdad61, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2792157f2f5539d4f927616669fdad61, type: 3}
