@@ -936,6 +936,16 @@ PrefabInstance:
       propertyPath: soundInfo.flameSpellClip
       value: 
       objectReference: {fileID: 8300000, guid: c9c053588e167da40baf2d9eddd6d152, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.enemyAlertVolume
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.enemyAlertClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e367f3acb3bc15f419a82865229da4f3, type: 3}
     - target: {fileID: 866787154801166770, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
         type: 3}
       propertyPath: m_Name

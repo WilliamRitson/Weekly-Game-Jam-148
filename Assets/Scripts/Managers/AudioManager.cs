@@ -44,8 +44,9 @@ public class AudioManager : MonoBehaviour
        
         public AudioClip flameSpellClip;
         public float flameSpellVolume;
-       
 
+        public AudioClip enemyAlertClip;
+        public float enemyAlertVolume;
 
         public AudioClip flameThrowerClip;
         public float flameThrowerVolume;
@@ -144,6 +145,16 @@ public class AudioManager : MonoBehaviour
             if (!IsSoundsMuted)
             {
                 audioSourceSounds.PlayOneShot(soundInfo.playerHealClip, soundInfo.playerHealVolume);
+            }
+        }
+    }
+    public void PlayEnemyAlertAudio()
+    {
+
+        {
+            if (!IsSoundsMuted)
+            {
+                audioSourceSounds.PlayOneShot(soundInfo.enemyAlertClip, soundInfo.enemyAlertVolume);
             }
         }
     }

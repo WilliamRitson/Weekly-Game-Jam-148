@@ -91,7 +91,8 @@ public class EnemyAI : Controller
     {
         if (engagedPlayer != isEngaged)
         {
-            Shout(isEngaged ? sawPlayerShouts : lostPlayerShouts);
+            AudioManager.SharedInstance().PlayEnemyAlertAudio();
+            Shout(isEngaged ? sawPlayerShouts : lostPlayerShouts);    
         }
         engagedPlayer = isEngaged;
     }
