@@ -63,7 +63,7 @@ public class ProjectileTracer : MonoBehaviour
     {
         if (Time.time - Time.deltaTime - creatTime >= trackingDuration && !Projectile2D.isAffetedBySquander)
         {
-            Projectile2DRig.velocity = -1*Projectile2D.transform.up * Projectile2D.projectileVelocity;
+            Projectile2DRig.velocity = -1 * Projectile2D.transform.up * Projectile2D.projectileVelocity;
         }
     }
 
@@ -78,6 +78,7 @@ public class ProjectileTracer : MonoBehaviour
             }
             //if (Projectile2D.isTargetingPlayer && collision.tag == "Player")
             //{
+            //    creatTime = Time.time;
             //    target = playerTransform;
             //}
         }
