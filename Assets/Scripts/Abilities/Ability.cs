@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Ability : Controllable, IDisplayAbility
 {
+    protected ProjectileLauncher projectileLauncher;
+
     public float cooldownTime = 10.0f;
     private bool onCooldown = false;
     protected float lastUsed = Mathf.Infinity;
@@ -14,6 +16,11 @@ public abstract class Ability : Controllable, IDisplayAbility
     [SerializeField] protected string abilityName;
     public string Name { get => abilityName; }
 
+
+    private void Awake()
+    {
+        projectileLauncher = GetComponent<ProjectileLauncher>();
+    }
 
     protected virtual void Trigger(Vector2 target)
     {

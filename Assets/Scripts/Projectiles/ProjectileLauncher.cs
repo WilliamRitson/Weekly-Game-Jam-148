@@ -36,7 +36,7 @@ public class ProjectileLauncher : Controllable
         LaunchAtPosition(target);
     }
 
-    public void LaunchAtPosition(Vector2 target)
+    public void LaunchAtPosition(Vector2 target, float sizeMultilpier = 1, float lifetimeModifier = -1, int damageModifier = -1)
     {
         this.target = target;
         animationManager.StartShootingAnimation();

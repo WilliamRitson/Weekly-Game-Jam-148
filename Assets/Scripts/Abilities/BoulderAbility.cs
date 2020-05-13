@@ -30,7 +30,7 @@ public class BoulderAbility : Ability
     public override void ActivateAbility(Vector2 target)
     {
         projectileLauncher.projectile = boundingProjectile;
-        projectileLauncher.LaunchInDirection(target - (Vector2)transform.position, 3, 15, 4);
+        projectileLauncher.LaunchAtPosition(target - (Vector2)transform.position, 3, 15, 4);
         projectileLauncher.projectile = initialProjectile2D;
     }
 
