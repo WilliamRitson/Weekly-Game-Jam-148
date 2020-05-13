@@ -16,6 +16,7 @@ public class ChangeSceneOnDeath : OnDeathBehavior
 
     public IEnumerator LoadStartScene()
     {
+        AudioManager.SharedInstance().PlayPlayerDeathAudio();
         yield return new WaitForSeconds(secBeforLoadingStartScene);
         if (Time.timeScale == 0)
         {
