@@ -103,5 +103,6 @@ public class ProjectileLauncher : Controllable
     public void Shoot()//this function will be called from the AnimationManager
     {
         LaunchInDirection(target);
+        
     }
 }

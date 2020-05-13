@@ -22,6 +22,7 @@ public class ColoredProjectile : MonoBehaviour
             case Element.Earth:
                 return brown;
             case Element.Fire:
+                AudioManager.SharedInstance().PlayFlameSpellAudio();
                 return Color.red;
             case Element.Water:
                 return Color.blue;

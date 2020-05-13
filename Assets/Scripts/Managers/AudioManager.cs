@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public static bool IsSoundsMuted;
     public static bool IsMusicMuted;
 
+
     [SerializeField] private int gameSceneBuildIndex;
     [SerializeField] private Sprite playAudioSprite;
     [SerializeField] private Sprite muteAudioSprite;
@@ -36,30 +37,27 @@ public class AudioManager : MonoBehaviour
         public float titleMusicVolume;
 
         [Header("Game Play Clips")]
-        public AudioClip buildTowerClip;
-        public float buildTowerVolume;
-        public AudioClip upgradeTowerClip;
-        public float upgradeTowerVolume;
-        public AudioClip[] sheepSoundClips;
-        public float sheepSoundVolume;
-        public AudioClip sheepDiedClip;
-        public float sheepDiedVolume;
-        public AudioClip destroyTowerClip;
-        public float destroyTowerVolume;
-        public AudioClip wolfSoundClip;
-        public float wolfSoundVolume;
-        public AudioClip wolfDiedClip;
-        public float wolfDiedVolume;
-        public AudioClip throwWeaponClip;
-        public float throwWeaponVolume;
-        public AudioClip hitWeaponClip;
-        public float hitWeaponVolume;
-        public AudioClip hunterDiedClip;
-        public float hunterDiedVolume;
-        public AudioClip wolfHurtClip;
-        public float wolfHurtVolume;
-        public AudioClip wolfAttackClip;
-        public float wolfAttackVolume;
+        public AudioClip playerHealClip;
+        public float playerHealVolume;
+        //  public AudioClips playerDamageClip;
+        //   public float playerDamageVolume;
+       
+        public AudioClip flameSpellClip;
+        public float flameSpellVolume;
+       
+
+
+        public AudioClip flameThrowerClip;
+        public float flameThrowerVolume;
+
+
+
+
+
+    }
+    public static AudioManager SharedInstance()
+    {
+        return AudioManager.Instance;
     }
 
     private void Awake()
@@ -123,107 +121,47 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayRandomDamageSound(AudioClip[] audioClips)
+  /*  public void PlayRandomDamageSound(AudioClip[] audioClips)
     {
         if (audioClips != null && !IsSoundsMuted)
         {
             int rand = Random.Range(0, audioClips.Length);
             if (rand == 1)
             {
-                audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.sheepSoundVolume);
+                audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.playerDamageVolume);
             }
             else
             {
-                audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.sheepSoundVolume);
+                audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.playerDamageVolume);
+            }
+        }
+    }
+    */
+    public void PlayRandomHealAudio()
+    {
+    
+        {
+            if (!IsSoundsMuted)
+            {
+                audioSourceSounds.PlayOneShot(soundInfo.playerHealClip, soundInfo.playerHealVolume);
             }
         }
     }
 
-    public void PlaySheepDiedAudio()
+    public void PlayFlameSpellAudio()
     {
         if (!IsSoundsMuted)
         {
-            audioSourceSounds.PlayOneShot(soundInfo.sheepDiedClip, soundInfo.sheepDiedVolume);
+            audioSourceSounds.PlayOneShot(soundInfo.flameSpellClip, soundInfo.flameSpellVolume);
         }
     }
 
-    public void PlayWolfSoundAudio()
+    public void PlayFlameThrowerAudio()
     {
         if (!IsSoundsMuted)
         {
-            audioSourceSounds.PlayOneShot(soundInfo.wolfSoundClip, soundInfo.wolfSoundVolume);
+            audioSourceSounds.PlayOneShot(soundInfo.flameThrowerClip, soundInfo.flameThrowerVolume);
         }
     }
 
-    public void PlayWolfDiedAudio()
-    {
-        if (!IsSoundsMuted)
-        {
-            audioSourceSounds.PlayOneShot(soundInfo.wolfDiedClip, soundInfo.wolfDiedVolume);
-        }
-    }
-
-    public void PlayWolfHurtAudio()
-    {
-        if (!IsSoundsMuted)
-        {
-            audioSourceSounds.PlayOneShot(soundInfo.wolfHurtClip, soundInfo.wolfHurtVolume);
-        }
-    }
-
-    public void PlayWolfAttackAudio()
-    {
-        if (!IsSoundsMuted)
-        {
-            audioSourceSounds.PlayOneShot(soundInfo.wolfAttackClip, soundInfo.wolfAttackVolume);
-        }
-    }
-
-    public void PlayThrowWeaponAudio()
-    {
-        if (!IsSoundsMuted)
-        {
-            audioSourceSounds.PlayOneShot(soundInfo.throwWeaponClip, soundInfo.throwWeaponVolume);
-        }
-    }
-
-    public void PlayHitWeaponAudio()
-    {
-        if (!IsSoundsMuted)
-        {
-            audioSourceSounds.PlayOneShot(soundInfo.hitWeaponClip, soundInfo.hitWeaponVolume);
-        }
-    }
-
-    public void PlayBuildTowerAudio()
-    {
-        if (!IsSoundsMuted)
-        {
-            audioSourceSounds.PlayOneShot(soundInfo.buildTowerClip, soundInfo.buildTowerVolume);
-        }
-    }
-
-    public void PlayDestroyTowerAudio()
-    {
-        if (!IsSoundsMuted)
-        {
-            audioSourceSounds.PlayOneShot(soundInfo.destroyTowerClip, soundInfo.destroyTowerVolume);
-        }
-    }
-
-    public void PlayUpgradeTowerAudio()
-    {
-        if (!IsSoundsMuted)
-        {
-            audioSourceSounds.PlayOneShot(soundInfo.upgradeTowerClip, soundInfo.upgradeTowerVolume);
-        }
-    }
-
-    public void PlayHunterDiedAudio()
-    {
-        if (!IsSoundsMuted)
-        {
-            audioSourceSounds.PlayOneShot(soundInfo.hunterDiedClip, soundInfo.hunterDiedVolume);
-        }
-    }
 }

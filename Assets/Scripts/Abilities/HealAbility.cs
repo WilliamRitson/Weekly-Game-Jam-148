@@ -14,6 +14,7 @@ public class HealAbility : Ability
     public override void ActivateAbility(Vector2 target)
     {
         dmg.Heal(healAmount);
+        AudioManager.SharedInstance().PlayRandomHealAudio();
     }
 
     public override bool ShouldUse(GameObject target)

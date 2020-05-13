@@ -26,6 +26,7 @@ public class Flamethrower : Ability
 
     IEnumerator LaunchOverTime(Vector2 target)
     {
+        AudioManager.SharedInstance().PlayFlameThrowerAudio();
         Vector2 towardsTarget = target - (Vector2) transform.position;
         float angleTowardsTarget = Vector2.SignedAngle(Vector2.right, towardsTarget);
         for (int i = 0; i < numberOfProjectiles; i++)

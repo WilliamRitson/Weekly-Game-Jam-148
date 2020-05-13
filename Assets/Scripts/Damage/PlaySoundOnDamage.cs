@@ -10,6 +10,6 @@ public class PlaySoundOnDamage : OnDamageBehavior
 
     protected override void OnDamaged(int damage)
     {
-        AudioManager.Instance.PlayRandomDamageSound(clips);
+   //     AudioManager.Instance.PlayRandomDamageSound(clips);
     }
 }
