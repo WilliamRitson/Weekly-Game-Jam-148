@@ -37,7 +37,8 @@ public class AudioManager : MonoBehaviour
         public float titleMusicVolume;
         public AudioClip bossMusicClip;
         public float bossMusicVolume;
-
+        public AudioClip levelMusicClip;
+        public float levelMusicVolume;
 
 
         [Header("Game Play Clips")]
@@ -104,6 +105,15 @@ public class AudioManager : MonoBehaviour
         IsMusicMuted = false;
         IsSoundsMuted = false;
         audioSourceMusic.clip = soundInfo.titleMusicClip;
+        audioSourceMusic.loop = true;
+        audioSourceMusic.Play();
+    }
+    public void PlayLevelMusic()
+    {
+        Debug.Log("Play title music");
+        IsMusicMuted = false;
+        IsSoundsMuted = false;
+        audioSourceMusic.clip = soundInfo.levelMusicClip;
         audioSourceMusic.loop = true;
         audioSourceMusic.Play();
     }
