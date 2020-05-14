@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
         [Header("Game Play Clips")]
         public AudioClip playerHealClip;
         public float playerHealVolume;
-        public AudioClip[] playerDamageClip;
+        public AudioClip playerDamageClip;
         public float playerDamageVolume;
 
         public AudioClip flameSpellClip;
@@ -219,6 +219,16 @@ public class AudioManager : MonoBehaviour
             else
             {
                 audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.enemyDeathVolume);
+            }
+        }
+    }
+    public void PlayDamageAudio()
+    {
+
+        {
+            if (!IsSoundsMuted)
+            {
+                audioSourceSounds.PlayOneShot(soundInfo.playerDamageClip, soundInfo.playerDamageVolume);
             }
         }
     }

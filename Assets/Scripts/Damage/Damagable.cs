@@ -89,6 +89,7 @@ public class Damagable : MonoBehaviour
         int resultantDamage = SetHealth(currentLife - damage);
         if (resultantDamage > 0)
         {
+            AudioManager.SharedInstance().PlayDamageAudio();
             OnDamaged?.Invoke(resultantDamage);
         }
         return resultantDamage;
