@@ -136,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
         type: 3}
       propertyPath: soundInfo.playerDamageClip.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
         type: 3}
@@ -267,7 +267,7 @@ PrefabInstance:
         type: 3}
       propertyPath: soundInfo.playerDamageClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: b59b900b2bbce1a439c0684325a4c263, type: 3}
+      objectReference: {fileID: 8300000, guid: 5610bf1b1b3734648b1d2744c6285cf5, type: 3}
     - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
         type: 3}
       propertyPath: soundInfo.windSpellClip
@@ -343,6 +343,16 @@ PrefabInstance:
       propertyPath: soundInfo.victoryMusicClip
       value: 
       objectReference: {fileID: 8300000, guid: 40555d4e126e44a42b7a2e7ed391a8c8, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.playerDamageVolume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.playerDamageClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5610bf1b1b3734648b1d2744c6285cf5, type: 3}
     - target: {fileID: 866787154801166770, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
         type: 3}
       propertyPath: m_Name
@@ -611,6 +621,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650daa8d03079cf43be6c141f1d275e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1363584990 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 866787154801166775, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+    type: 3}
+  m_PrefabInstance: {fileID: 557911773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &503984420883229393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -627,7 +643,7 @@ PrefabInstance:
         type: 3}
       propertyPath: AudioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1363584990}
     - target: {fileID: 503984422119393179, guid: ab339a2e4e524f942a1304e194f3080f,
         type: 3}
       propertyPath: m_LocalPosition.x
