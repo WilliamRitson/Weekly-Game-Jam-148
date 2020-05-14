@@ -92,6 +92,10 @@ public class KingAbility : Ability
     public IEnumerator BackToNormaleShape()
     {
         yield return new WaitForSeconds(secToBackToNormaleShape);
+        if (king == null)
+        {
+            king = GameObject.FindGameObjectWithTag("KingPrefab");
+        }
         shapeshifter.Transform(king, false);
         hasTransformed = false;
     }

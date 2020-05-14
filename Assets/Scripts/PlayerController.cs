@@ -49,4 +49,9 @@ public class PlayerController : Controller
         controls.Gameplay.Disable();
     }
 
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, 3);
+    }
 }

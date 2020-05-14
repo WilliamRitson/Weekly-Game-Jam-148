@@ -40,7 +40,7 @@ public class Shapeshifter : Ability
 
     public override void ActivateAbility(Vector2 target)
     {
-        var shiftable = Physics2D.OverlapCircleAll(target, 1, 1 << 10)
+        var shiftable = Physics2D.OverlapCircleAll(transform.position, 3, 1 << 10)
             .FirstOrDefault(col => col.GetComponent<EnemyAI>() != null);
         if (!shiftable) return;
 
@@ -67,6 +67,7 @@ public class Shapeshifter : Ability
 
         if (isItPlayer)
         {
+
             var health = newForm.GetComponent<Damagable>();
             health.MaximumLife += lifeBonus;
             health.CurrentLife = health.MaximumLife;
@@ -85,7 +86,7 @@ public class Shapeshifter : Ability
         }
         else
         {
-            
+            newForm.layer = 0;//give him the layer default (to not give him the layer enemy and by that we prevent the player from shapeshift to it even wehn he is a wizard)
             newForm.gameObject.name = "King";
 
             switch (shapeshiftType)
@@ -105,10 +106,7 @@ public class Shapeshifter : Ability
             newKingAbility.secToShapeshitf = kingAbility.secToShapeshitf;
             newKingAbility.secToShapeshitf = kingAbility.secToBackToNormaleShape;
             newKingAbility.king = kingAbility.king;
-            //for (int i = 0; i < kingAbility.enemiesSummonPositions.Length; i++)
-            //{
-            //    newKingAbility.enemiesSummonPositions[i] = kingAbility.enemiesSummonPositions[i];
-            //}
+
         }
 
 
