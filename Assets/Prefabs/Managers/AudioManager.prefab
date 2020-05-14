@@ -237,9 +237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489315a0da9dc9e44a3b2e6a5db060ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playMusicSprite: {fileID: 0}
-  muteMusicSprite: {fileID: 0}
-  maxNumberOfSounds: 0
+  gameSceneBuildIndex: 0
+  playAudioSprite: {fileID: 0}
+  muteAudioSprite: {fileID: 0}
   audioSourceSounds: {fileID: 866787154801166775}
   audioSourceMusic: {fileID: 866787154801166768}
   soundInfo:
@@ -247,27 +247,27 @@ MonoBehaviour:
     mainMusicVolume: 0
     titleMusicClip: {fileID: 0}
     titleMusicVolume: 0
-    buildTowerClip: {fileID: 0}
-    buildTowerVolume: 0
-    upgradeTowerClip: {fileID: 0}
-    upgradeTowerVolume: 0
-    sheepSoundClips: []
-    sheepSoundVolume: 0
-    sheepDiedClip: {fileID: 0}
-    sheepDiedVolume: 0
-    destroyTowerClip: {fileID: 0}
-    destroyTowerVolume: 0
-    wolfSoundClip: {fileID: 0}
-    wolfSoundVolume: 0
-    wolfDiedClip: {fileID: 0}
-    wolfDiedVolume: 0
-    throwWeaponClip: {fileID: 0}
-    throwWeaponVolume: 0
-    hitWeaponClip: {fileID: 0}
-    hitWeaponVolume: 0
-    hunterDiedClip: {fileID: 0}
-    hunterDiedVolume: 0
-    wolfHurtClip: {fileID: 0}
-    wolfHurtVolume: 0
-    wolfAttackClip: {fileID: 0}
-    wolfAttackVolume: 0
+    bossMusicClip: {fileID: 8300000, guid: 611549c0cc61d754496f56814d5e279e, type: 3}
+    bossMusicVolume: 0
+    playerHealClip: {fileID: 0}
+    playerHealVolume: 0
+    playerDamageClip: []
+    playerDamageVolume: 0
+    flameSpellClip: {fileID: 0}
+    flameSpellVolume: 0
+    rockSpellClip: {fileID: 0}
+    rockSpellVolume: 0
+    waterSpellClip: {fileID: 0}
+    waterSpellVolume: 0
+    windSpellClip: {fileID: 0}
+    windSpellVolume: 0
+    enemyAlertClip: {fileID: 0}
+    enemyAlertVolume: 0
+    flameThrowerClip: {fileID: 0}
+    flameThrowerVolume: 0
+    playerDeathClip: {fileID: 0}
+    playerDeathVolume: 0
+    shapeShiftClip: {fileID: 0}
+    shapeShiftVolume: 0
+    enemyDeathClip: []
+    enemyDeathVolume: 0

@@ -9,6 +9,7 @@ public class Shapeshifter : Ability
     public const string fireShifshape = "Fire";
     public const string waterShifshape = "Water";
     public const string windShifshape = "Wind";
+    public GameObject baseForm;
 
     public float speedBonus = 1.0f;
     public float projectileCooldownMultiplier = 0.8f;
@@ -24,6 +25,7 @@ public class Shapeshifter : Ability
     {
         if (!TryGetComponent(out kingAbility))// if it's not king
         {
+            
             gameObject.tag = "Player";
             var playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerUI>();
             var dmg = GetComponent<Damagable>();
@@ -43,6 +45,7 @@ public class Shapeshifter : Ability
         if (!shiftable) return;
 
         Transform(shiftable.gameObject, true);
+        AudioManager.SharedInstance().PlayShapeShiftAudio();
     }
 
 
@@ -53,6 +56,7 @@ public class Shapeshifter : Ability
         Shapeshifter shift = newForm.GetComponent<Shapeshifter>();
         shift.icon = icon;
         shift.abilityName = abilityName;
+        shift.cooldownTime = cooldownTime;
         shift.speedBonus = speedBonus;
         shift.projectileCooldownMultiplier = projectileCooldownMultiplier;
         shift.lifeBonus = lifeBonus;
@@ -64,9 +68,11 @@ public class Shapeshifter : Ability
         if (isItPlayer)
         {
             Destroy(newForm.GetComponent<EnemyAI>());
+            Destroy(newForm.GetComponent<DestroyOnDeath>());
 
 
             newForm.AddComponent<CameraCenter>();
+            newForm.AddComponent<ChangeSceneOnDeath>();
             newForm.AddComponent<PlayerController>();
             newForm.GetComponent<Mover>().initialSpeed += speedBonus;
             newForm.GetComponent<ProjectileLauncher>().timeBetweenShots *= projectileCooldownMultiplier;

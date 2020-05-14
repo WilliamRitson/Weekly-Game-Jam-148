@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     public static bool IsSoundsMuted;
     public static bool IsMusicMuted;
-
+    private int randomSound;
 
     [SerializeField] private int gameSceneBuildIndex;
     [SerializeField] private Sprite playAudioSprite;
@@ -35,13 +35,17 @@ public class AudioManager : MonoBehaviour
         public float mainMusicVolume;
         public AudioClip titleMusicClip;
         public float titleMusicVolume;
+        public AudioClip bossMusicClip;
+        public float bossMusicVolume;
+
+
 
         [Header("Game Play Clips")]
         public AudioClip playerHealClip;
         public float playerHealVolume;
-        //  public AudioClips playerDamageClip;
-        //   public float playerDamageVolume;
-       
+        public AudioClip[] playerDamageClip;
+        public float playerDamageVolume;
+
         public AudioClip flameSpellClip;
         public float flameSpellVolume;
 
@@ -51,18 +55,29 @@ public class AudioManager : MonoBehaviour
         public AudioClip waterSpellClip;
         public float waterSpellVolume;
 
+        public AudioClip windSpellClip;
+        public float windSpellVolume;
+
         public AudioClip enemyAlertClip;
         public float enemyAlertVolume;
 
         public AudioClip flameThrowerClip;
         public float flameThrowerVolume;
 
+        public AudioClip windShieldClip;
+        public float windShieldVolume;
+
+        public AudioClip rockSpecialClip;
+        public float rockSpecialVolume;
+
         public AudioClip playerDeathClip;
         public float playerDeathVolume;
 
+        public AudioClip shapeShiftClip;
+        public float shapeShiftVolume;
 
-
-
+        public AudioClip[] enemyDeathClip;
+        public float enemyDeathVolume;
     }
     public static AudioManager SharedInstance()
     {
@@ -72,6 +87,8 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+       
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start()
@@ -83,6 +100,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayTitleMusic()
     {
+        Debug.Log("Play title music");
         IsMusicMuted = false;
         IsSoundsMuted = false;
         audioSourceMusic.clip = soundInfo.titleMusicClip;
@@ -92,11 +110,30 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMainMusic()
     {
+        Debug.Log("Play main music");
         IsMusicMuted = false;
         IsSoundsMuted = false;
         audioSourceMusic.clip = soundInfo.mainMusicClip;
         audioSourceMusic.loop = true;
         audioSourceMusic.Play();
+    }
+
+    public void PlayBossMusic()
+    {
+        Debug.Log("Start boss music");
+        IsMusicMuted = false;
+        IsSoundsMuted = false;
+        audioSourceMusic.clip = soundInfo.bossMusicClip;
+        audioSourceMusic.loop = true;
+        audioSourceMusic.Play();
+    }
+
+    public void StopAllMusic()
+    {
+        foreach (var audio in GetComponents<AudioSource>())
+        {
+            audio.Stop();
+        }
     }
 
     public void MuteAudio()
@@ -129,23 +166,28 @@ public class AudioManager : MonoBehaviour
             MuteAudio();
         }
     }
-
-  /*  public void PlayRandomDamageSound(AudioClip[] audioClips)
+    public void PlayRandom(AudioClip[] audioClips)
     {
         if (audioClips != null && !IsSoundsMuted)
         {
             int rand = Random.Range(0, audioClips.Length);
             if (rand == 1)
             {
-                audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.playerDamageVolume);
+                audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.enemyDeathVolume);
             }
             else
             {
-                audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.playerDamageVolume);
+                audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.enemyDeathVolume);
             }
         }
     }
-    */
+
+    public void PlayRandomEnemyDeathSound()
+    {
+        randomSound = Random.Range(0, 3);
+        audioSourceSounds.PlayOneShot(soundInfo.enemyDeathClip[randomSound], soundInfo.enemyDeathVolume);
+    }
+    
     public void PlayRandomHealAudio()
     {
     
@@ -153,6 +195,37 @@ public class AudioManager : MonoBehaviour
             if (!IsSoundsMuted)
             {
                 audioSourceSounds.PlayOneShot(soundInfo.playerHealClip, soundInfo.playerHealVolume);
+            }
+        }
+    }
+
+    public void PlayShapeShiftAudio()
+    {
+
+        {
+            if (!IsSoundsMuted)
+            {
+                audioSourceSounds.PlayOneShot(soundInfo.shapeShiftClip, soundInfo.shapeShiftVolume);
+            }
+        }
+    }
+    public void PlayWindShieldAudio()
+    {
+
+        {
+            if (!IsSoundsMuted)
+            {
+                audioSourceSounds.PlayOneShot(soundInfo.windShieldClip, soundInfo.windShieldVolume);
+            }
+        }
+    }
+    public void PlayRockSpecialAudio()
+    {
+
+        {
+            if (!IsSoundsMuted)
+            {
+                audioSourceSounds.PlayOneShot(soundInfo.rockSpecialClip, soundInfo.rockSpecialVolume);
             }
         }
     }
@@ -204,6 +277,14 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayWindSpellAudio()
+    {
+        if (!IsSoundsMuted)
+        {
+            audioSourceSounds.PlayOneShot(soundInfo.windSpellClip, soundInfo.windSpellVolume);
+        }
+    }
+
     public void PlayFlameThrowerAudio()
     {
         if (!IsSoundsMuted)
@@ -212,4 +293,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+ /*   public void ChangeBGM(AudioClip music)
+    {
+        if (audioSourceMusic.clip.name == music.name)
+            return;
+
+        audioSourceMusic.Stop();
+        audioSourceMusic.clip = music;
+        audioSourceMusic.Play();
+    }
+    */
 }
+

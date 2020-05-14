@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - PlayerUI
   - BouncingProjectile
+  - Music
   layers:
   - Default
   - TransparentFX
@@ -48,6 +49,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Detail
+    uniqueID: 1208710155
     locked: 0
   - name: Characters
     uniqueID: 699864967

@@ -33,7 +33,7 @@ public class Meter : MonoBehaviour
     }
 
 
-    void SetHealth(int newValue)
+    protected virtual void SetHealth(int newValue)
     {
         display.text = newValue + "/" + (int) max;
         fill.fillAmount = newValue / max ;
