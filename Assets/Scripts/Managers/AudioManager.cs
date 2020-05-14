@@ -130,9 +130,20 @@ public class AudioManager : MonoBehaviour
 
     public void StopAllMusic()
     {
-        foreach (var audio in GetComponents<AudioSource>())
+       
+        if(PlayerPrefs.GetInt("IsMusicPlaying",0)==0)
         {
-            audio.Stop();
+            foreach (var audio in GetComponents<AudioSource>())
+            {
+                audio.Stop();
+            }
+        }
+        else
+        {
+            foreach (var audio in GetComponents<AudioSource>())
+            {
+                audio.Play();
+            }
         }
     }
 

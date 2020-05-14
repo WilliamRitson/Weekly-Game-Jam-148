@@ -428,6 +428,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 503984422119393178, guid: ab339a2e4e524f942a1304e194f3080f,
+        type: 3}
+      propertyPath: AudioSource
+      value: 
+      objectReference: {fileID: 1961224631}
     - target: {fileID: 503984422119393179, guid: ab339a2e4e524f942a1304e194f3080f,
         type: 3}
       propertyPath: m_LocalPosition.x
