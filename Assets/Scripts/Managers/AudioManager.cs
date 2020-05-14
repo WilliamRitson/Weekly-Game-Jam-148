@@ -51,6 +51,9 @@ public class AudioManager : MonoBehaviour
         public AudioClip waterSpellClip;
         public float waterSpellVolume;
 
+        public AudioClip windSpellClip;
+        public float windSpellVolume;
+
         public AudioClip enemyAlertClip;
         public float enemyAlertVolume;
 
@@ -78,6 +81,8 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+       
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start()
@@ -230,8 +235,7 @@ public class AudioManager : MonoBehaviour
     {
         if (!IsSoundsMuted)
         {
-            // TODO: Put right clip here
-            audioSourceSounds.PlayOneShot(soundInfo.flameSpellClip, soundInfo.flameSpellVolume);
+            audioSourceSounds.PlayOneShot(soundInfo.windSpellClip, soundInfo.windSpellVolume);
         }
     }
 

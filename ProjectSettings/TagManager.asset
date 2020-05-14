@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - PlayerUI
   - BouncingProjectile
+  - Music
   layers:
   - Default
   - TransparentFX
