@@ -35,6 +35,10 @@ public class AudioManager : MonoBehaviour
         public float mainMusicVolume;
         public AudioClip titleMusicClip;
         public float titleMusicVolume;
+        public AudioClip bossMusicClip;
+        public float bossMusicVolume;
+
+
 
         [Header("Game Play Clips")]
         public AudioClip playerHealClip;
@@ -68,10 +72,6 @@ public class AudioManager : MonoBehaviour
 
         public AudioClip[] enemyDeathClip;
         public float enemyDeathVolume;
-
-
-
-
     }
     public static AudioManager SharedInstance()
     {
@@ -94,6 +94,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayTitleMusic()
     {
+        Debug.Log("Play title music");
         IsMusicMuted = false;
         IsSoundsMuted = false;
         audioSourceMusic.clip = soundInfo.titleMusicClip;
@@ -103,11 +104,30 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMainMusic()
     {
+        Debug.Log("Play main music");
         IsMusicMuted = false;
         IsSoundsMuted = false;
         audioSourceMusic.clip = soundInfo.mainMusicClip;
         audioSourceMusic.loop = true;
         audioSourceMusic.Play();
+    }
+
+    public void PlayBossMusic()
+    {
+        Debug.Log("Start boss music");
+        IsMusicMuted = false;
+        IsSoundsMuted = false;
+        audioSourceMusic.clip = soundInfo.bossMusicClip;
+        audioSourceMusic.loop = true;
+        audioSourceMusic.Play();
+    }
+
+    public void StopAllMusic()
+    {
+        foreach (var audio in GetComponents<AudioSource>())
+        {
+            audio.Stop();
+        }
     }
 
     public void MuteAudio()

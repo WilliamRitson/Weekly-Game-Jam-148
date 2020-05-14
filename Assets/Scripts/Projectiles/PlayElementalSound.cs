@@ -19,6 +19,7 @@ public class PlayElementalSound : MonoBehaviour
                 AudioManager.SharedInstance().PlayWaterSpellAudio();
                 return;
             case Element.Wind:
+                AudioManager.SharedInstance().PlayWaterSpellAudio();
                 return;
         }
     }
