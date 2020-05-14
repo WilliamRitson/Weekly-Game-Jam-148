@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2288091286251211494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329260773047677106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff16cd81c984964c96f97308102ffd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7151678729051449583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65,7 +77,13 @@ PrefabInstance:
     - target: {fileID: 7470936336945256541, guid: 1a95904930f3e0b46a162cbbe0115bdc,
         type: 3}
       propertyPath: m_Name
-      value: Wizard Projectile
+      value: Wind Wizard Projectile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a95904930f3e0b46a162cbbe0115bdc, type: 3}
+--- !u!1 &329260773047677106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7470936336945256541, guid: 1a95904930f3e0b46a162cbbe0115bdc,
+    type: 3}
+  m_PrefabInstance: {fileID: 7151678729051449583}
+  m_PrefabAsset: {fileID: 0}

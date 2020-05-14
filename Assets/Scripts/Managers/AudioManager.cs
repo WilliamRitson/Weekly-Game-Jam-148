@@ -226,6 +226,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayWindSpellAudio()
+    {
+        if (!IsSoundsMuted)
+        {
+            // TODO: Put right clip here
+            audioSourceSounds.PlayOneShot(soundInfo.flameSpellClip, soundInfo.flameSpellVolume);
+        }
+    }
+
     public void PlayFlameThrowerAudio()
     {
         if (!IsSoundsMuted)

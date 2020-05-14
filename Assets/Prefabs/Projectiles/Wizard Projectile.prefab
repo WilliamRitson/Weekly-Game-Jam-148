@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 7933732613927211527}
   - component: {fileID: -2331451308498347255}
   - component: {fileID: 251916064117685672}
+  - component: {fileID: 4935024268670453529}
   m_Layer: 9
   m_Name: Wizard Projectile
   m_TagString: Projectile
@@ -237,3 +238,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4935024268670453529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470936336945256541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff16cd81c984964c96f97308102ffd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
