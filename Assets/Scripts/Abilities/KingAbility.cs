@@ -5,7 +5,7 @@ using UnityEngine;
 public class KingAbility : Ability
 {
     public static bool hasTransformed = false;
-
+    public static bool isHeInNormalShape = true;
     public Transform[] enemiesSummonPositions;//the positions where the enemies will be created after summon them
     public float secToShapeshitf = 15;//time to shapeshift the king
     public float secToBackToNormaleShape = 5;//time to finish the shapeshift pf the king and bring him back to it's normal shape
@@ -34,7 +34,6 @@ public class KingAbility : Ability
         shapeshifter = GetComponent<Shapeshifter>();
         if (hasTransformed)
         {
-            hasTransformed = false;
             StartCoroutine(BackToNormaleShape());
         }
     }
@@ -45,38 +44,42 @@ public class KingAbility : Ability
         {
             return true;
         }
+        
         print(lastShapeShiftTime);
         return false;
     }
 
     public override void ActivateAbility(Vector2 target)
     {
-        if (Time.time - lastShapeShiftTime >= secToShapeshitf)
+        if (!hasTransformed)
         {
-            
-            lastShapeShiftTime = Time.time;
-
-            int abilityNum = Random.Range(0, 4);
-
-            switch (abilityNum)
+            if (Time.time - lastShapeShiftTime >= secToShapeshitf)
             {
-                case 0: shapeshifter.SetShapeshitType(Shapeshifter.earthShifshape); break;
-                case 1: shapeshifter.SetShapeshitType(Shapeshifter.fireShifshape); break;
-                case 2: shapeshifter.SetShapeshitType(Shapeshifter.waterShifshape); break;
-                case 3: shapeshifter.SetShapeshitType(Shapeshifter.windShifshape); break;
 
-                default:
-                    break;
+                lastShapeShiftTime = Time.time;
+
+                int abilityNum = Random.Range(0, 4);
+
+                switch (abilityNum)
+                {
+                    case 0: shapeshifter.SetShapeshitType(Shapeshifter.earthShifshape); break;
+                    case 1: shapeshifter.SetShapeshitType(Shapeshifter.fireShifshape); break;
+                    case 2: shapeshifter.SetShapeshitType(Shapeshifter.waterShifshape); break;
+                    case 3: shapeshifter.SetShapeshitType(Shapeshifter.windShifshape); break;
+
+                    default:
+                        break;
+                }
+
+                for (int i = 0; i < enemiesSummonPositions.Length; i++)
+                {
+                    Instantiate(wizards[abilityNum], enemiesSummonPositions[i].position, Quaternion.identity);
+                }
+
+                shapeshifter.Transform(wizards[abilityNum], false);
+                hasTransformed = true;
+                //StartCoroutine(BackToNormaleShape());
             }
-
-            for (int i = 0; i < enemiesSummonPositions.Length; i++)
-            {
-                Instantiate(wizards[abilityNum], enemiesSummonPositions[i].position, Quaternion.identity);
-            }
-
-            shapeshifter.Transform(wizards[abilityNum], false);
-            hasTransformed = true;
-            //StartCoroutine(BackToNormaleShape());
         }
     }
 
@@ -84,5 +87,6 @@ public class KingAbility : Ability
     {
         yield return new WaitForSeconds(secToBackToNormaleShape);
         shapeshifter.Transform(king, false);
+        hasTransformed = false;
     }
 }
