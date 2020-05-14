@@ -121,6 +121,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &192053680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 866787154801166770, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+    type: 3}
+  m_PrefabInstance: {fileID: 263012412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &192053683 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 866787154801166775, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+    type: 3}
+  m_PrefabInstance: {fileID: 263012412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &192053685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192053680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650daa8d03079cf43be6c141f1d275e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newTrack: {fileID: 8300000, guid: 611549c0cc61d754496f56814d5e279e, type: 3}
 --- !u!1001 &263012412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,6 +157,16 @@ PrefabInstance:
         type: 3}
       propertyPath: soundInfo.playerHealClips.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.playerDamageClip.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.enemyDeathClip.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
         type: 3}
@@ -228,6 +263,36 @@ PrefabInstance:
       propertyPath: soundInfo.shapeShiftVolume
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.enemyDeathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9174b20a202f2494593c2e45108f9979, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.enemyDeathVolume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.enemyDeathClip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 39aef8baf6ffed147bed29fb4340418e, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.enemyDeathClip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 898e3975fbb7e9741bd2d897a1d8fdd8, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.enemyDeathClip.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: b59b900b2bbce1a439c0684325a4c263, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.playerDamageClip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 39aef8baf6ffed147bed29fb4340418e, type: 3}
     - target: {fileID: 866787154801166770, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
         type: 3}
       propertyPath: m_Name
@@ -677,6 +742,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8016335078681181944, guid: ba427a35122a78c418deb428f5acd9ff,
+        type: 3}
+      propertyPath: audioSourceSounds
+      value: 
+      objectReference: {fileID: 192053683}
+    - target: {fileID: 8016335078681181944, guid: ba427a35122a78c418deb428f5acd9ff,
+        type: 3}
+      propertyPath: soundInfo
+      value: 
+      objectReference: {fileID: 1750743153}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba427a35122a78c418deb428f5acd9ff, type: 3}
 --- !u!1001 &1405466922
@@ -941,6 +1016,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038aa9b4668fbbc4d88f383b758621f2, type: 3}
+--- !u!114 &1750743153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3119098736383249537, guid: 7fb1f8c537a1f4e4f93e0f9f4e2fe68a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1032785377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f701a1ec54942d43bd2af46e380b414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3243273669793852739
 Transform:
   m_ObjectHideFlags: 0
