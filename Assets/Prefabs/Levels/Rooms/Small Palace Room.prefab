@@ -1222,7 +1222,7 @@ GameObject:
   - component: {fileID: 5838783576610696013}
   m_Layer: 8
   m_Name: Blockers
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2812,7 +2812,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 699864967
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4972,6 +4972,20 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &1673120461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8488557579722160702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb5b13cf00088f44985c05d7d26aeb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {fileID: 0}
+  displacement: {x: 0, y: 0, z: 0}
 --- !u!1001 &3465594801602296326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4987,7 +5001,7 @@ PrefabInstance:
     - target: {fileID: 1386735939222605520, guid: d6033487c68ba5c4890c1d8efe73dadb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -42.93
+      value: -43.39
       objectReference: {fileID: 0}
     - target: {fileID: 1386735939222605520, guid: d6033487c68ba5c4890c1d8efe73dadb,
         type: 3}
@@ -5039,8 +5053,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Palace Room Large Door Transition
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1997476039878140940, guid: d6033487c68ba5c4890c1d8efe73dadb, type: 3}
+    - {fileID: 1997476039878140940, guid: d6033487c68ba5c4890c1d8efe73dadb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d6033487c68ba5c4890c1d8efe73dadb, type: 3}
+--- !u!1 &8488557579722160702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5031978979766566968, guid: d6033487c68ba5c4890c1d8efe73dadb,
+    type: 3}
+  m_PrefabInstance: {fileID: 3465594801602296326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2532967893546595542 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1386735939222605520, guid: d6033487c68ba5c4890c1d8efe73dadb,
@@ -5057,12 +5079,12 @@ PrefabInstance:
     - target: {fileID: 1386735939222605520, guid: d6033487c68ba5c4890c1d8efe73dadb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.56
+      value: -6.03
       objectReference: {fileID: 0}
     - target: {fileID: 1386735939222605520, guid: d6033487c68ba5c4890c1d8efe73dadb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -42.9
+      value: -44.5
       objectReference: {fileID: 0}
     - target: {fileID: 1386735939222605520, guid: d6033487c68ba5c4890c1d8efe73dadb,
         type: 3}

@@ -6,44 +6,28 @@ public class KingAbility : Ability
 {
     public Transform[] enemiesSummonPositions;//the positions where the enemies will be created after summon them
     public float secToShapeshitf;//time to shapeshift the king
+    public float secToBackToNormaleShape;//time to finish the shapeshift pf the king and bring him back to it's normal shape
     public GameObject[] wizards;
-    //public ProjectileSquander squander;
-    //public BouncingProjectile bouncingProjectile;
-
+    public GameObject king;
     private float lastShapeShiftTime;//the last time that the king shapshiftied
 
-    //private BoulderAbility boulderAbility;
-    //private Flamethrower flamethrower;
-    //private HealAbility healAbility;
-    //private WindShieldAbility windShieldAbility;
-    //private VolleyAbility volleyAbility;
+
     private Shapeshifter shapeshifter;
 
-    //protected override void Trigger(Vector2 target)
-    //{
-    //    if (onCooldown) return;
-    //    MovingTextManager.Instance.ShowMessage(Name, transform.position, Color.white);
-    //    StartCooldown();
-    //    ActivateAbility(target);
-    //}
+
 
     private void Start()
     {
         lastShapeShiftTime = Time.time;
-
-        //boulderAbility = GetComponent<BoulderAbility>();
-        //flamethrower = GetComponent<Flamethrower>();
-        //healAbility = GetComponent<HealAbility>();
-        //windShieldAbility = GetComponent<WindShieldAbility>();
-        //volleyAbility = GetComponent<VolleyAbility>();
-        //TryGetComponent(out boulderAbility);
-        //TryGetComponent(out flamethrower);
-        //TryGetComponent(out healAbility);
-        //TryGetComponent(out windShieldAbility);
-        //TryGetComponent(out volleyAbility);
         shapeshifter = GetComponent<Shapeshifter>();
+        //if (enemiesSummonPositions == null)
+        //{
+        //    enemiesSummonPositions[0] = GameObject.FindGameObjectWithTag("Spawn1").transform;
+        //    enemiesSummonPositions[1] = GameObject.FindGameObjectWithTag("Spawn1").transform;
+        //    enemiesSummonPositions[2] = GameObject.FindGameObjectWithTag("Spawn1").transform;
+        //    enemiesSummonPositions[3] = GameObject.FindGameObjectWithTag("Spawn1").transform;
+        //}
 
-        //windShieldAbility.projectileSquander = squander;
     }
 
     public override bool ShouldUse(GameObject target)
@@ -81,21 +65,12 @@ public class KingAbility : Ability
             }
 
             shapeshifter.Transform(wizards[abilityNum], false);
-
-
-
-
-            //switch (abilityNum)
-            //{
-            //    case 0: boulderAbility.ActivateAbility(Vector2.zero); print(boulderAbility); break;
-            //    case 1: flamethrower.ActivateAbility(target); print(flamethrower); break;
-            //    case 2: healAbility.ActivateAbility(Vector2.zero); print(healAbility); break;
-            //    case 3: windShieldAbility.ActivateAbility(Vector2.zero); print(windShieldAbility); break;
-            //    case 4: volleyAbility.ActivateAbility(Vector2.zero); print(volleyAbility); break;
-
-            //    default:
-            //        break;
-            //}
         }
+    }
+
+    public IEnumerator BackToNormaleShape()
+    {
+        yield return new WaitForSeconds(secToBackToNormaleShape);
+        shapeshifter.Transform(king, false);
     }
 }

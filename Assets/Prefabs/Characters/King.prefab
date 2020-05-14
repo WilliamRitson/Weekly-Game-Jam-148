@@ -260,12 +260,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  secToShapeshitf: 10
+  secToShapeshitf: 15
+  secToBackToNormaleShape: 5
   wizards:
   - {fileID: 8789722093864275767, guid: b9791dd5400eb204fa4463a3e65c726f, type: 3}
   - {fileID: 8276633770049013688, guid: 7fb1f8c537a1f4e4f93e0f9f4e2fe68a, type: 3}
   - {fileID: 3939100468574369217, guid: ba427a35122a78c418deb428f5acd9ff, type: 3}
   - {fileID: 621541000085318119, guid: 038aa9b4668fbbc4d88f383b758621f2, type: 3}
+  king: {fileID: 0}
 --- !u!114 &6904316433789764497
 MonoBehaviour:
   m_ObjectHideFlags: 0

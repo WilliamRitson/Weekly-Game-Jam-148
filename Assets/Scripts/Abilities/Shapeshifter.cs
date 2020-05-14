@@ -61,12 +61,16 @@ public class Shapeshifter : Ability
         shift.projectileCooldownMultiplier = projectileCooldownMultiplier;
         shift.lifeBonus = lifeBonus;
         shift.justShifted = true;
-        var health = newForm.GetComponent<Damagable>();
-        health.MaximumLife += lifeBonus;
-        health.CurrentLife = health.MaximumLife;
+
+        
+        
 
         if (isItPlayer)
         {
+            var health = newForm.GetComponent<Damagable>();
+            health.MaximumLife += lifeBonus;
+            health.CurrentLife = health.MaximumLife;
+
             Destroy(newForm.GetComponent<EnemyAI>());
             Destroy(newForm.GetComponent<DestroyOnDeath>());
 
@@ -81,7 +85,7 @@ public class Shapeshifter : Ability
         }
         else
         {
-
+            
             newForm.gameObject.name = "King";
 
             switch (shapeshiftType)
