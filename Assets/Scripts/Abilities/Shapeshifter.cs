@@ -24,6 +24,7 @@ public class Shapeshifter : Ability
     {
         if (!TryGetComponent(out kingAbility))// if it's not king
         {
+            
             gameObject.tag = "Player";
             var playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerUI>();
             var dmg = GetComponent<Damagable>();
@@ -43,6 +44,7 @@ public class Shapeshifter : Ability
         if (!shiftable) return;
 
         Transform(shiftable.gameObject, true);
+        AudioManager.SharedInstance().PlayShapeShiftAudio();
     }
 
 
