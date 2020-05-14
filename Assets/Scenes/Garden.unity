@@ -453,7 +453,7 @@ PrefabInstance:
         type: 3}
       propertyPath: soundInfo.playerDeathClip
       value: 
-      objectReference: {fileID: 8300000, guid: b10ab7992a720a54f9312c7f7eacefb1, type: 3}
+      objectReference: {fileID: 8300000, guid: b59b900b2bbce1a439c0684325a4c263, type: 3}
     - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
         type: 3}
       propertyPath: soundInfo.shapeShiftClip
@@ -493,7 +493,7 @@ PrefabInstance:
         type: 3}
       propertyPath: soundInfo.playerDamageClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 39aef8baf6ffed147bed29fb4340418e, type: 3}
+      objectReference: {fileID: 8300000, guid: b59b900b2bbce1a439c0684325a4c263, type: 3}
     - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
         type: 3}
       propertyPath: soundInfo.windSpellClip
