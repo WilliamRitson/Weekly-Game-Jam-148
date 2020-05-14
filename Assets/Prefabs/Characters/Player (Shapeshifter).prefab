@@ -246,12 +246,12 @@ PrefabInstance:
     - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: maximumLife
-      value: 14
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6427696827174015556, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: currentLife
-      value: 14
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7993249566926608189, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}

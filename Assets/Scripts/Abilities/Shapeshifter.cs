@@ -103,6 +103,7 @@ public class Shapeshifter : Ability
             newKingAbility.wizards = kingAbility.wizards;
             newKingAbility.enemiesSummonPositions = kingAbility.enemiesSummonPositions;
             newKingAbility.secToShapeshitf = kingAbility.secToShapeshitf;
+            newKingAbility.secToShapeshitf = kingAbility.secToBackToNormaleShape;
         }
 
 

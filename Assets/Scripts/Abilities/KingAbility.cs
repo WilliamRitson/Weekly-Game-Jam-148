@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class KingAbility : Ability
 {
+    public static bool hasTransformed = false;
+
     public Transform[] enemiesSummonPositions;//the positions where the enemies will be created after summon them
     public float secToShapeshitf;//time to shapeshift the king
-    public float secToBackToNormaleShape;//time to finish the shapeshift pf the king and bring him back to it's normal shape
+    public float secToBackToNormaleShape = 5;//time to finish the shapeshift pf the king and bring him back to it's normal shape
     public GameObject[] wizards;
     public GameObject king;
     private float lastShapeShiftTime;//the last time that the king shapshiftied
@@ -18,16 +20,23 @@ public class KingAbility : Ability
 
     private void Start()
     {
+        enemiesSummonPositions[0] = GameObject.FindGameObjectWithTag("Spawn1").transform;
+        enemiesSummonPositions[1] = GameObject.FindGameObjectWithTag("Spawn2").transform;
+        enemiesSummonPositions[2] = GameObject.FindGameObjectWithTag("Spawn3").transform;
+        enemiesSummonPositions[3] = GameObject.FindGameObjectWithTag("Spawn4").transform;
+
+
+        if (king == null)
+        {
+            king = GameObject.FindGameObjectWithTag("KingPrefab");
+        }
         lastShapeShiftTime = Time.time;
         shapeshifter = GetComponent<Shapeshifter>();
-        //if (enemiesSummonPositions == null)
-        //{
-        //    enemiesSummonPositions[0] = GameObject.FindGameObjectWithTag("Spawn1").transform;
-        //    enemiesSummonPositions[1] = GameObject.FindGameObjectWithTag("Spawn1").transform;
-        //    enemiesSummonPositions[2] = GameObject.FindGameObjectWithTag("Spawn1").transform;
-        //    enemiesSummonPositions[3] = GameObject.FindGameObjectWithTag("Spawn1").transform;
-        //}
-
+        if (hasTransformed)
+        {
+            hasTransformed = false;
+            StartCoroutine(BackToNormaleShape());
+        }
     }
 
     public override bool ShouldUse(GameObject target)
@@ -44,6 +53,7 @@ public class KingAbility : Ability
     {
         if (Time.time - lastShapeShiftTime >= secToShapeshitf)
         {
+            
             lastShapeShiftTime = Time.time;
 
             int abilityNum = Random.Range(0, 4);
@@ -65,6 +75,8 @@ public class KingAbility : Ability
             }
 
             shapeshifter.Transform(wizards[abilityNum], false);
+            hasTransformed = true;
+            //StartCoroutine(BackToNormaleShape());
         }
     }
 
