@@ -55,6 +55,7 @@ public class Shapeshifter : Ability
         Shapeshifter shift = newForm.GetComponent<Shapeshifter>();
         shift.icon = icon;
         shift.abilityName = abilityName;
+        shift.cooldownTime = cooldownTime;
         shift.speedBonus = speedBonus;
         shift.projectileCooldownMultiplier = projectileCooldownMultiplier;
         shift.lifeBonus = lifeBonus;
