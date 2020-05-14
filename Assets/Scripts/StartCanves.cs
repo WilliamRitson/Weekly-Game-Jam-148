@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class StartCanves : MonoBehaviour
 {
+    public AudioSource AudioSource;
+    int isPlaying;
     public void Start()
     {
-        AudioManager.SharedInstance().StopAllMusic();
+        //AudioManager.SharedInstance().StopAllMusic();
+        isPlaying = PlayerPrefs.GetInt("IsMusicPlaying", 0);
     }
     public void Play(int gameSceneIndex)
     {
@@ -20,7 +23,19 @@ public class StartCanves : MonoBehaviour
 
     public void UpdateAudioState()
     {
-        AudioManager.Instance.UpdateAudioState();
+        //AudioManager.Instance.UpdateAudioState();
+        isPlaying = PlayerPrefs.GetInt("IsMusicPlaying", 0);
+        if (isPlaying==0)
+        {
+            AudioSource.Stop();
+            PlayerPrefs.SetInt("IsMusicPlaying", 1);
+        }
+        else
+        {
+            AudioSource.Play();
+            PlayerPrefs.SetInt("IsMusicPlaying", 0);
+        }
+        
     }
 
     public void Exit()

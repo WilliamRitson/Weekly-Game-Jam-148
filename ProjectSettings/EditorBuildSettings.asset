@@ -12,11 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Garden.unity
     guid: 12226bca9c1da1040b7d900a3cc695ce
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: d5cbc8a8c9a74b547bbb9c4df12970d3
-  - enabled: 1
-    path: Assets/Scenes/Throne Area.unity
-    guid: 0fe8bde1357ded9429ce4922211ffd37
+    path: Assets/Scenes/Victory.unity
+    guid: 176d4ce578cd3394c831cb64db61118d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 473bc9683a232b345bc44303b606b23d,
       type: 2}
