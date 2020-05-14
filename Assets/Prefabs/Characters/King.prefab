@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 3054527743915416524}
   - component: {fileID: 6904316433789764497}
   - component: {fileID: 3953667852896391813}
+  - component: {fileID: 582837398}
   m_Layer: 0
   m_Name: King
   m_TagString: Enemy
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 699864967
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2690792559708188323, guid: 806abc7c89bf9424494306eedda547a1,
+  m_Sprite: {fileID: -2690792559708188323, guid: 4568041d0c37cc74aa4b7af518d20467,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -142,9 +143,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00000023841858, y: -0.019495487}
   serializedVersion: 2
-  m_Radius: 0.9
+  m_Radius: 1.231415
 --- !u!114 &451712906868164777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,11 +160,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileVelocity: 5
   timeBetweenShots: 1.5
-  projectile: {fileID: 7470936336945256541, guid: 1a95904930f3e0b46a162cbbe0115bdc,
+  projectile: {fileID: 317268778779518894, guid: be50e63a854019a4e9d77d5ef6579bae,
     type: 3}
   damage: 2
   damageType: 0
-  wizardProjectile: {fileID: 0}
+  wizardProjectile: {fileID: 317268778779518894, guid: be50e63a854019a4e9d77d5ef6579bae,
+    type: 3}
 --- !u!114 &3280312768704907048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,8 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77fab3ec3d0b414ea511ad3c696e31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumLife: 10000
-  currentLife: 10000
+  maximumLife: 25
+  currentLife: 25
   weakness: 3
   resistance: 1
 --- !u!114 &3787512428640841894
@@ -258,7 +260,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  secToShapeshitf: 5
+  secToShapeshitf: 10
   wizards:
   - {fileID: 8789722093864275767, guid: b9791dd5400eb204fa4463a3e65c726f, type: 3}
   - {fileID: 8276633770049013688, guid: 7fb1f8c537a1f4e4f93e0f9f4e2fe68a, type: 3}
@@ -295,3 +297,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ba77a99a8163248879acb402c83692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &582837398
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6904316433789764496}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: fc949a3bc75b03d4daea4cb584baa649, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -47,7 +47,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.3
+  m_Radius: 1.4
 --- !u!114 &2087483368638540919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +78,112 @@ MonoBehaviour:
   abilityName: Shielding Gale
   abilityDuration: 3
   projectileSquander: {fileID: 2087483368638540919}
+  WindShield: {fileID: 7668522695437102394}
+--- !u!1001 &3689681694249011721
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 621541000085318113}
+    m_Modifications:
+    - target: {fileID: 6438020121292564272, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.049999237
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564272, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.05977249
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564272, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564272, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564272, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564272, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564272, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564272, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564272, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564272, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564272, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564273, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564273, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564274, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 990099867
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564274, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564274, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564275, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_Name
+      value: Wind Shield Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438020121292564275, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6630e6afe9c21f14ea95576b0d3ccbe1, type: 3}
+--- !u!1 &7668522695437102394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6438020121292564275, guid: 6630e6afe9c21f14ea95576b0d3ccbe1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3689681694249011721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6703665644109956876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,6 +196,18 @@ PrefabInstance:
       propertyPath: damageType
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 882104181211489746, guid: 2792157f2f5539d4f927616669fdad61,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 329260773047677106, guid: cfb13e40fd1d69147906b0f4617426c4,
+        type: 3}
+    - target: {fileID: 882104181211489746, guid: 2792157f2f5539d4f927616669fdad61,
+        type: 3}
+      propertyPath: wizardProjectile
+      value: 
+      objectReference: {fileID: 329260773047677106, guid: cfb13e40fd1d69147906b0f4617426c4,
+        type: 3}
     - target: {fileID: 2882040427668367955, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}
       propertyPath: weakness
@@ -113,12 +231,12 @@ PrefabInstance:
     - target: {fileID: 6172214478714121965, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -45.5841
       objectReference: {fileID: 0}
     - target: {fileID: 6172214478714121965, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 132.34633
       objectReference: {fileID: 0}
     - target: {fileID: 6172214478714121965, guid: 2792157f2f5539d4f927616669fdad61,
         type: 3}
@@ -190,7 +308,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 22100000, guid: 2057de35904f71f439685f6d8d8cc597,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 5042322418128439364, guid: 2792157f2f5539d4f927616669fdad61, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2792157f2f5539d4f927616669fdad61, type: 3}
