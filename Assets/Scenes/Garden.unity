@@ -494,6 +494,31 @@ PrefabInstance:
       propertyPath: soundInfo.playerDamageClip.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 39aef8baf6ffed147bed29fb4340418e, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.windSpellClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a1c35234339f57428ecf6b8d6b9dfad, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.windShieldClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 48d56f9315594314bba51857a9eb333a, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.windShieldVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.rockSpecialClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b084b22576af16b4aae1569941ccbe7c, type: 3}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.rockSpecialVolume
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 866787154801166770, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
         type: 3}
       propertyPath: m_Name

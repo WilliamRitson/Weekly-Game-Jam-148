@@ -12,6 +12,7 @@ public class BoulderAbility : Ability
 
     private void Start()
     {
+        
         projectileLauncher = GetComponent<ProjectileLauncher>();
         initialProjectile2D = projectileLauncher.projectile;
 
@@ -28,6 +29,7 @@ public class BoulderAbility : Ability
 
     public override void ActivateAbility(Vector2 target)
     {
+        AudioManager.SharedInstance().PlayRockSpecialAudio();
         projectileLauncher.projectile = boundingProjectile;
         projectileLauncher.LaunchAtPosition(target, 3, 15, 4);
     }

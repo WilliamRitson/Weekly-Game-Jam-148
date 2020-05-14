@@ -64,6 +64,12 @@ public class AudioManager : MonoBehaviour
         public AudioClip flameThrowerClip;
         public float flameThrowerVolume;
 
+        public AudioClip windShieldClip;
+        public float windShieldVolume;
+
+        public AudioClip rockSpecialClip;
+        public float rockSpecialVolume;
+
         public AudioClip playerDeathClip;
         public float playerDeathVolume;
 
@@ -200,6 +206,26 @@ public class AudioManager : MonoBehaviour
             if (!IsSoundsMuted)
             {
                 audioSourceSounds.PlayOneShot(soundInfo.shapeShiftClip, soundInfo.shapeShiftVolume);
+            }
+        }
+    }
+    public void PlayWindShieldAudio()
+    {
+
+        {
+            if (!IsSoundsMuted)
+            {
+                audioSourceSounds.PlayOneShot(soundInfo.windShieldClip, soundInfo.windShieldVolume);
+            }
+        }
+    }
+    public void PlayRockSpecialAudio()
+    {
+
+        {
+            if (!IsSoundsMuted)
+            {
+                audioSourceSounds.PlayOneShot(soundInfo.rockSpecialClip, soundInfo.rockSpecialVolume);
             }
         }
     }
