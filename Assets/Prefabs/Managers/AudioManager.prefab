@@ -44,10 +44,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -245,29 +245,40 @@ MonoBehaviour:
   soundInfo:
     mainMusicClip: {fileID: 0}
     mainMusicVolume: 0
-    titleMusicClip: {fileID: 0}
-    titleMusicVolume: 0
-    bossMusicClip: {fileID: 8300000, guid: 611549c0cc61d754496f56814d5e279e, type: 3}
-    bossMusicVolume: 0
-    playerHealClip: {fileID: 0}
-    playerHealVolume: 0
-    playerDamageClip: []
-    playerDamageVolume: 0
-    flameSpellClip: {fileID: 0}
-    flameSpellVolume: 0
-    rockSpellClip: {fileID: 0}
-    rockSpellVolume: 0
-    waterSpellClip: {fileID: 0}
-    waterSpellVolume: 0
-    windSpellClip: {fileID: 0}
+    titleMusicClip: {fileID: 8300000, guid: 37e1bb67ddc5a5c4f8ca687bbbf65f03, type: 3}
+    titleMusicVolume: 1
+    bossMusicClip: {fileID: 8300000, guid: 0445b33d09f07de48b0c2ac87252f503, type: 3}
+    bossMusicVolume: 1
+    levelMusicClip: {fileID: 8300000, guid: 391737fc623f2ff489db2c394b66dc8d, type: 3}
+    levelMusicVolume: 1
+    victoryMusicClip: {fileID: 8300000, guid: 40555d4e126e44a42b7a2e7ed391a8c8, type: 3}
+    victoryMusicVolume: 1
+    playerHealClip: {fileID: 8300000, guid: 349144e43c31841479cefc6253ee82fb, type: 3}
+    playerHealVolume: 0.7
+    playerDamageClip: {fileID: 8300000, guid: 5610bf1b1b3734648b1d2744c6285cf5, type: 3}
+    playerDamageVolume: 0.7
+    flameSpellClip: {fileID: 8300000, guid: c9c053588e167da40baf2d9eddd6d152, type: 3}
+    flameSpellVolume: 0.7
+    rockSpellClip: {fileID: 8300000, guid: c4e1b80ed7299c74e9ce4a09832c23be, type: 3}
+    rockSpellVolume: 0.6
+    waterSpellClip: {fileID: 8300000, guid: a742ce8703dbd6c459b33d0e5a4b5b9f, type: 3}
+    waterSpellVolume: 0.2
+    windSpellClip: {fileID: 8300000, guid: 9a1c35234339f57428ecf6b8d6b9dfad, type: 3}
     windSpellVolume: 0
-    enemyAlertClip: {fileID: 0}
-    enemyAlertVolume: 0
-    flameThrowerClip: {fileID: 0}
-    flameThrowerVolume: 0
-    playerDeathClip: {fileID: 0}
-    playerDeathVolume: 0
-    shapeShiftClip: {fileID: 0}
-    shapeShiftVolume: 0
-    enemyDeathClip: []
-    enemyDeathVolume: 0
+    enemyAlertClip: {fileID: 8300000, guid: e367f3acb3bc15f419a82865229da4f3, type: 3}
+    enemyAlertVolume: 0.16
+    flameThrowerClip: {fileID: 8300000, guid: af3e9a4b275f2ba469e8962a1d6bbe4c, type: 3}
+    flameThrowerVolume: 0.6
+    windShieldClip: {fileID: 8300000, guid: 48d56f9315594314bba51857a9eb333a, type: 3}
+    windShieldVolume: 0.3
+    rockSpecialClip: {fileID: 8300000, guid: b084b22576af16b4aae1569941ccbe7c, type: 3}
+    rockSpecialVolume: 0.4
+    playerDeathClip: {fileID: 8300000, guid: b59b900b2bbce1a439c0684325a4c263, type: 3}
+    playerDeathVolume: 0.7
+    shapeShiftClip: {fileID: 8300000, guid: 86839220ead6323459b9ab0e1dada3bd, type: 3}
+    shapeShiftVolume: 0.8
+    enemyDeathClip:
+    - {fileID: 8300000, guid: 39aef8baf6ffed147bed29fb4340418e, type: 3}
+    - {fileID: 8300000, guid: 898e3975fbb7e9741bd2d897a1d8fdd8, type: 3}
+    - {fileID: 8300000, guid: b59b900b2bbce1a439c0684325a4c263, type: 3}
+    enemyDeathVolume: 0.8
