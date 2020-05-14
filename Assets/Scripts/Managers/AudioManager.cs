@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     public static bool IsSoundsMuted;
     public static bool IsMusicMuted;
-
+    private int randomSound;
 
     [SerializeField] private int gameSceneBuildIndex;
     [SerializeField] private Sprite playAudioSprite;
@@ -39,9 +39,9 @@ public class AudioManager : MonoBehaviour
         [Header("Game Play Clips")]
         public AudioClip playerHealClip;
         public float playerHealVolume;
-        //  public AudioClips playerDamageClip;
-        //   public float playerDamageVolume;
-       
+        public AudioClip[] playerDamageClip;
+        public float playerDamageVolume;
+
         public AudioClip flameSpellClip;
         public float flameSpellVolume;
 
@@ -62,6 +62,10 @@ public class AudioManager : MonoBehaviour
 
         public AudioClip shapeShiftClip;
         public float shapeShiftVolume;
+
+        public AudioClip[] enemyDeathClip;
+        public float enemyDeathVolume;
+
 
 
 
@@ -131,23 +135,28 @@ public class AudioManager : MonoBehaviour
             MuteAudio();
         }
     }
-
-  /*  public void PlayRandomDamageSound(AudioClip[] audioClips)
+    public void PlayRandom(AudioClip[] audioClips)
     {
         if (audioClips != null && !IsSoundsMuted)
         {
             int rand = Random.Range(0, audioClips.Length);
             if (rand == 1)
             {
-                audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.playerDamageVolume);
+                audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.enemyDeathVolume);
             }
             else
             {
-                audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.playerDamageVolume);
+                audioSourceSounds.PlayOneShot(audioClips[rand], soundInfo.enemyDeathVolume);
             }
         }
     }
-    */
+
+    public void PlayRandomEnemyDeathSound()
+    {
+        randomSound = Random.Range(0, 3);
+        audioSourceSounds.PlayOneShot(soundInfo.enemyDeathClip[randomSound], soundInfo.enemyDeathVolume);
+    }
+    
     public void PlayRandomHealAudio()
     {
     
@@ -225,4 +234,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+ /*   public void ChangeBGM(AudioClip music)
+    {
+        if (audioSourceMusic.clip.name == music.name)
+            return;
+
+        audioSourceMusic.Stop();
+        audioSourceMusic.clip = music;
+        audioSourceMusic.Play();
+    }
+    */
 }
+
