@@ -234,7 +234,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void ChangeBGM(AudioClip music)
+ /*   public void ChangeBGM(AudioClip music)
     {
         if (audioSourceMusic.clip.name == music.name)
             return;
@@ -243,4 +243,6 @@ public class AudioManager : MonoBehaviour
         audioSourceMusic.clip = music;
         audioSourceMusic.Play();
     }
+    */
 }
+
