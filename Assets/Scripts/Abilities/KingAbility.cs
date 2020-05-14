@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KingAbility : Ability
 {
+    public int numOfWizardToSpawn;
     public static bool hasTransformed = false;
     public static bool isHeInNormalShape = true;
     public Transform[] enemiesSummonPositions;//the positions where the enemies will be created after summon them
@@ -20,16 +21,19 @@ public class KingAbility : Ability
 
     private void Start()
     {
+
+
         enemiesSummonPositions[0] = GameObject.FindGameObjectWithTag("Spawn1").transform;
         enemiesSummonPositions[1] = GameObject.FindGameObjectWithTag("Spawn2").transform;
         enemiesSummonPositions[2] = GameObject.FindGameObjectWithTag("Spawn3").transform;
         enemiesSummonPositions[3] = GameObject.FindGameObjectWithTag("Spawn4").transform;
 
+        numOfWizardToSpawn = Mathf.Clamp(numOfWizardToSpawn, 1, enemiesSummonPositions.Length);
 
-        //if (king == null)
-        //{
-        //    king = GameObject.FindGameObjectWithTag("KingPrefab");
-        //}
+        if (king == null)
+        {
+            king = GameObject.FindGameObjectWithTag("KingPrefab");
+        }
         lastShapeShiftTime = Time.time;
         shapeshifter = GetComponent<Shapeshifter>();
         if (hasTransformed)
@@ -71,9 +75,11 @@ public class KingAbility : Ability
                         break;
                 }
 
-                for (int i = 0; i < enemiesSummonPositions.Length; i++)
+                int rand;
+                for (int i = 0; i < numOfWizardToSpawn; i++)
                 {
-                    Instantiate(wizards[abilityNum], enemiesSummonPositions[i].position, Quaternion.identity);
+                    rand = Random.Range(0, enemiesSummonPositions.Length);
+                    Instantiate(wizards[abilityNum], enemiesSummonPositions[rand].position, Quaternion.identity);
                 }
 
                 shapeshifter.Transform(wizards[abilityNum], false);

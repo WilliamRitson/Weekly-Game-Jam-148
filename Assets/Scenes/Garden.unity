@@ -3714,6 +3714,11 @@ PrefabInstance:
       propertyPath: secToShapeshitf
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3054527743915416524, guid: 938958b19c775f941b63b9726f89af3c,
+        type: 3}
+      propertyPath: numOfWizardToSpawn
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6904316433789764496, guid: 938958b19c775f941b63b9726f89af3c,
         type: 3}
       propertyPath: m_Name
@@ -3982,6 +3987,7 @@ MonoBehaviour:
   cooldownTime: 10
   icon: {fileID: 21300000, guid: 26d3615945d0e03428930f0af87a9a90, type: 3}
   abilityName: King
+  numOfWizardToSpawn: 0
   enemiesSummonPositions:
   - {fileID: 0}
   - {fileID: 0}
