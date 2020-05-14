@@ -333,6 +333,16 @@ PrefabInstance:
       propertyPath: soundInfo.levelMusicVolume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.victoryMusicVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 866787154801166769, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
+        type: 3}
+      propertyPath: soundInfo.victoryMusicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 40555d4e126e44a42b7a2e7ed391a8c8, type: 3}
     - target: {fileID: 866787154801166770, guid: ceae6cbad30757b4c9dee1c8ea4d1463,
         type: 3}
       propertyPath: m_Name

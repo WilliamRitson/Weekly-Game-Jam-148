@@ -39,6 +39,9 @@ public class AudioManager : MonoBehaviour
         public float bossMusicVolume;
         public AudioClip levelMusicClip;
         public float levelMusicVolume;
+        public AudioClip victoryMusicClip;
+        public float victoryMusicVolume;
+
 
 
         [Header("Game Play Clips")]
@@ -134,6 +137,16 @@ public class AudioManager : MonoBehaviour
         IsMusicMuted = false;
         IsSoundsMuted = false;
         audioSourceMusic.clip = soundInfo.bossMusicClip;
+        audioSourceMusic.loop = true;
+        audioSourceMusic.Play();
+    }
+
+    public void PlayVictoryMusic()
+    {
+        Debug.Log("Start boss music");
+        IsMusicMuted = false;
+        IsSoundsMuted = false;
+        audioSourceMusic.clip = soundInfo.victoryMusicClip;
         audioSourceMusic.loop = true;
         audioSourceMusic.Play();
     }
