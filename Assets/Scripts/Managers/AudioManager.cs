@@ -60,6 +60,8 @@ public class AudioManager : MonoBehaviour
         public AudioClip playerDeathClip;
         public float playerDeathVolume;
 
+        public AudioClip shapeShiftClip;
+        public float shapeShiftVolume;
 
 
 
@@ -153,6 +155,17 @@ public class AudioManager : MonoBehaviour
             if (!IsSoundsMuted)
             {
                 audioSourceSounds.PlayOneShot(soundInfo.playerHealClip, soundInfo.playerHealVolume);
+            }
+        }
+    }
+
+    public void PlayShapeShiftAudio()
+    {
+
+        {
+            if (!IsSoundsMuted)
+            {
+                audioSourceSounds.PlayOneShot(soundInfo.shapeShiftClip, soundInfo.shapeShiftVolume);
             }
         }
     }
