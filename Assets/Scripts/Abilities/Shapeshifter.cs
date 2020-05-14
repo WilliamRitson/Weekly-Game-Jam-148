@@ -38,14 +38,24 @@ public class Shapeshifter : Ability
         }
     }
 
+    private Collider2D GetTargetEntity(Vector2 target)
+    {
+        return Physics2D.OverlapCircleAll(target, 2)
+            .FirstOrDefault(col => col.GetComponent<EnemyAI>() != null);
+    }
+
     public override void ActivateAbility(Vector2 target)
     {
-        var shiftable = Physics2D.OverlapCircleAll(transform.position, 3, 1 << 10)
-            .FirstOrDefault(col => col.GetComponent<EnemyAI>() != null);
+        var shiftable = GetTargetEntity(target);
         if (!shiftable) return;
 
         Transform(shiftable.gameObject, true);
         AudioManager.SharedInstance().PlayShapeShiftAudio();
+    }
+
+    protected override bool CanUse(Vector2 target)
+    {
+        return GetTargetEntity(target) != null;
     }
 
 

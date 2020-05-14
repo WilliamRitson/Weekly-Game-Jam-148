@@ -25,9 +25,15 @@ public abstract class Ability : Controllable, IDisplayAbility
     protected virtual void Trigger(Vector2 target)
     {
         if (onCooldown) return;
+        if (!CanUse(target)) return;
         MovingTextManager.Instance.ShowMessage(Name, transform.position, Color.white);
         StartCooldown();
         ActivateAbility(target);
+    }
+
+    protected virtual bool CanUse(Vector2 target)
+    {
+        return true;
     }
     
     protected void StartCooldown()
