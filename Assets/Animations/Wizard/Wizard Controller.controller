@@ -70,6 +70,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: xVelocity
     m_EventTreshold: -0.5
+  - m_ConditionMode: 1
+    m_ConditionEvent: isWalking
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -771486635509302155}
   m_Solo: 0
@@ -694,6 +697,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: xVelocity
     m_EventTreshold: 0.5
+  - m_ConditionMode: 1
+    m_ConditionEvent: isWalking
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2614431409611997712}
   m_Solo: 0
@@ -843,6 +849,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: yVelocity
     m_EventTreshold: 0.5
+  - m_ConditionMode: 1
+    m_ConditionEvent: isWalking
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3298326167405635600}
   m_Solo: 0
@@ -1097,6 +1106,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: isShooting
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isWalking
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: xVelocity

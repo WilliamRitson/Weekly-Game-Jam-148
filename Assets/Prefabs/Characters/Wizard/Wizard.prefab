@@ -82,5 +82,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wizard
       objectReference: {fileID: 0}
+    - target: {fileID: 3126844044251436796, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993249566926608189, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 099427b464474954eaee47b91faaa442, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ef9abe98f4196438b3b673eb717bf4, type: 3}

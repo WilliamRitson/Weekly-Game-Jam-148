@@ -46,6 +46,7 @@ MonoBehaviour:
   cooldownTime: 40
   icon: {fileID: 21300000, guid: e7f3e177844b92143ae019f2dcad1a0d, type: 3}
   abilityName: Shapeshift
+  baseForm: {fileID: 0}
   speedBonus: 2
   projectileCooldownMultiplier: 0.6
   lifeBonus: 2
@@ -257,6 +258,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 7993249566926608189, guid: d8ef9abe98f4196438b3b673eb717bf4,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 099427b464474954eaee47b91faaa442, type: 2}
     - target: {fileID: 8268134916471085141, guid: d8ef9abe98f4196438b3b673eb717bf4,
         type: 3}
       propertyPath: saveRange

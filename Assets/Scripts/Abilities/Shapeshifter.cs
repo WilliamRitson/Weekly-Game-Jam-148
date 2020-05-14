@@ -40,7 +40,7 @@ public class Shapeshifter : Ability
 
     public override void ActivateAbility(Vector2 target)
     {
-        var shiftable = Physics2D.OverlapCircleAll(target, 1)
+        var shiftable = Physics2D.OverlapCircleAll(target, 1, 1 << 10)
             .FirstOrDefault(col => col.GetComponent<EnemyAI>() != null);
         if (!shiftable) return;
 
