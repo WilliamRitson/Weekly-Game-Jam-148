@@ -7,7 +7,7 @@ public class KingAbility : Ability
     public static bool hasTransformed = false;
 
     public Transform[] enemiesSummonPositions;//the positions where the enemies will be created after summon them
-    public float secToShapeshitf;//time to shapeshift the king
+    public float secToShapeshitf = 15;//time to shapeshift the king
     public float secToBackToNormaleShape = 5;//time to finish the shapeshift pf the king and bring him back to it's normal shape
     public GameObject[] wizards;
     public GameObject king;
@@ -26,10 +26,10 @@ public class KingAbility : Ability
         enemiesSummonPositions[3] = GameObject.FindGameObjectWithTag("Spawn4").transform;
 
 
-        if (king == null)
-        {
-            king = GameObject.FindGameObjectWithTag("KingPrefab");
-        }
+        //if (king == null)
+        //{
+        //    king = GameObject.FindGameObjectWithTag("KingPrefab");
+        //}
         lastShapeShiftTime = Time.time;
         shapeshifter = GetComponent<Shapeshifter>();
         if (hasTransformed)

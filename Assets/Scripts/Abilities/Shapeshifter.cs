@@ -104,6 +104,11 @@ public class Shapeshifter : Ability
             newKingAbility.enemiesSummonPositions = kingAbility.enemiesSummonPositions;
             newKingAbility.secToShapeshitf = kingAbility.secToShapeshitf;
             newKingAbility.secToShapeshitf = kingAbility.secToBackToNormaleShape;
+            newKingAbility.king = kingAbility.king;
+            //for (int i = 0; i < kingAbility.enemiesSummonPositions.Length; i++)
+            //{
+            //    newKingAbility.enemiesSummonPositions[i] = kingAbility.enemiesSummonPositions[i];
+            //}
         }
 
 
