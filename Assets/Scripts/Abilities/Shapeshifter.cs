@@ -68,9 +68,11 @@ public class Shapeshifter : Ability
         if (isItPlayer)
         {
             Destroy(newForm.GetComponent<EnemyAI>());
+            Destroy(newForm.GetComponent<DestroyOnDeath>());
 
 
             newForm.AddComponent<CameraCenter>();
+            newForm.AddComponent<ChangeSceneOnDeath>();
             newForm.AddComponent<PlayerController>();
             newForm.GetComponent<Mover>().initialSpeed += speedBonus;
             newForm.GetComponent<ProjectileLauncher>().timeBetweenShots *= projectileCooldownMultiplier;

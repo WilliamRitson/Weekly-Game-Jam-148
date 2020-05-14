@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 1854722995657483237}
   - component: {fileID: 3054527743915416524}
   - component: {fileID: 6904316433789764497}
+  - component: {fileID: 3953667852896391813}
   m_Layer: 0
   m_Name: King
   m_TagString: Enemy
@@ -36,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 6904316433789764496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.26, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -77,16 +78,16 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 699864967
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5323558718126175124, guid: 5bc2826808f63264188cee78df9e3349,
+  m_Sprite: {fileID: -2690792559708188323, guid: 806abc7c89bf9424494306eedda547a1,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -143,7 +144,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.9
 --- !u!114 &451712906868164777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +163,7 @@ MonoBehaviour:
     type: 3}
   damage: 2
   damageType: 0
+  wizardProjectile: {fileID: 0}
 --- !u!114 &3280312768704907048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDirection: {x: 0, y: 0}
+  focusPoint: {x: 0, y: 0}
   moveSpeed: 5
   maxEngagmentDist: 8
   rememberPlayerTime: 10
@@ -276,6 +279,19 @@ MonoBehaviour:
   cooldownTime: 10
   icon: {fileID: 21300000, guid: 26d3615945d0e03428930f0af87a9a90, type: 3}
   abilityName: 
+  baseForm: {fileID: 0}
   speedBonus: 1
   projectileCooldownMultiplier: 0.8
   lifeBonus: 2
+--- !u!114 &3953667852896391813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6904316433789764496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ba77a99a8163248879acb402c83692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

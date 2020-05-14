@@ -14,7 +14,8 @@ public abstract class OnDeathBehavior : MonoBehaviour
 
     private void OnDestroy()
     {
-        damagable.OnDeath -= OnDeath;
+        if (damagable != null)
+            damagable.OnDeath -= OnDeath;
     }
 
     protected abstract void OnDeath();
@@ -33,7 +34,8 @@ public abstract class OnDamageBehavior : MonoBehaviour
 
     private void OnDestroy()
     {
-        damagable.OnDamaged -= OnDamaged;
+        if (damagable != null)
+            damagable.OnDamaged -= OnDamaged;
     }
 
     protected abstract void OnDamaged(int damage);
