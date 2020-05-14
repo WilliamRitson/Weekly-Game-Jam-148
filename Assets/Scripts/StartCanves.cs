@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StartCanves : MonoBehaviour
 {
+    public void Start()
+    {
+        AudioManager.SharedInstance().StopAllMusic();
+    }
     public void Play(int gameSceneIndex)
     {
         if (Time.timeScale == 0)
